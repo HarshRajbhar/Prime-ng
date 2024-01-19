@@ -13,8 +13,25 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { InplaceModule } from 'primeng/inplace';
 import { TagModule } from 'primeng/tag';
 import { ScrollerModule } from 'primeng/scroller';
+import { OtherCompoComponent } from './other-compo/other-compo.component';
+import { FormsModule } from '@angular/forms';
+import { AccordionModule } from 'primeng/accordion';
+import { SliderModule } from 'primeng/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TreeSelectModule } from 'primeng/treeselect';
+import { OrganizationChartModule } from 'primeng/organizationchart';
+import { TimelineModule } from 'primeng/timeline';
+import { FieldsetModule } from 'primeng/fieldset';
+import { PanelModule } from 'primeng/panel';
+import { DialogModule } from 'primeng/dialog';
+import { ProgressBarModule } from 'primeng/progressbar';
 @NgModule({
-  declarations: [AppComponent, PrimeGridComponent, PrimeTableComponent],
+  declarations: [
+    AppComponent,
+    PrimeGridComponent,
+    PrimeTableComponent,
+    OtherCompoComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,6 +44,17 @@ import { ScrollerModule } from 'primeng/scroller';
     InplaceModule,
     TagModule,
     ScrollerModule,
+    SliderModule,
+    FormsModule,
+    AccordionModule,
+    BrowserAnimationsModule,
+    TreeSelectModule,
+    OrganizationChartModule,
+    TimelineModule,
+    FieldsetModule,
+    PanelModule,
+    DialogModule,
+    ProgressBarModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

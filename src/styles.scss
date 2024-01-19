@@ -5,3 +5,13 @@
 * {
   font-family: "Comfortaa", sans-serif;
 }
+html,
+body {
+  margin: 0;
+}
+.p-tabmenu .p-tabmenu-nav {
+  border: unset;
+}
+.ui-accordion-content-wrapper-overflown {
+  overflow: hidden;
+}

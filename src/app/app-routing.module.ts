@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrimeTableComponent } from './prime-table/prime-table.component';
 import { PrimeGridComponent } from './prime-grid/prime-grid.component';
+import { OtherCompoComponent } from './other-compo/other-compo.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'grid',
     component: PrimeGridComponent,
+  },
+  {
+    path: 'others',
+    component: OtherCompoComponent,
   },
   {
     path: '',
