@@ -1,13 +1,7 @@
-import { CurrencyPipe, NgFor } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, Pipe } from '@angular/core';
-import { TableModule } from 'primeng/table';
-import { ProductsData } from '../../assets/big_data';
-import { SkeletonModule } from 'primeng/skeleton';
-import { InplaceModule } from 'primeng/inplace';
-import { TagModule } from 'primeng/tag';
+import { Component, OnInit } from '@angular/core';
 import { FilterMatchMode, FilterService, SelectItem } from 'primeng/api';
+import { ProductsData } from '../../assets/big_data';
 
-import { ScrollerModule } from 'primeng/scroller';
 interface Column {
   field: string;
   header: string;
@@ -27,16 +21,8 @@ interface Product {
 
 @Component({
   selector: 'app-prime-table',
-  standalone: true,
-  imports: [
-    NgFor,
-    TableModule,
-    CurrencyPipe,
-    SkeletonModule,
-    InplaceModule,
-    TagModule,
-    ScrollerModule,
-  ],
+  // standalone: true,
+  // imports: [NgFor],
   templateUrl: './prime-table.component.html',
   styleUrl: './prime-table.component.scss',
 })
