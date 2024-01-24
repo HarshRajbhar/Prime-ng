@@ -1,0 +1,303 @@
+<!-- input Mask -->
+<div
+  class="card flex justify-content-center"
+  style="width: 100%; display: flex; flex-direction: column"
+>
+  <div style="width: 100%; display: flex; flex-wrap: wrap">
+    <div class="flex-auto" style="flex: auto">
+      <span
+        class="font-bold block mb-2"
+        style="display: block; font-weight: bold; margin-bottom: 5px"
+        >SSN</span
+      >
+      <p-inputMask
+        mask="999-99-9999"
+        [(ngModel)]="input_mask1"
+        placeholder="999-99-9999"
+      ></p-inputMask>
+    </div>
+
+    <div class="flex-auto" style="flex: auto">
+      <span
+        class="font-bold block mb-2"
+        style="display: block; font-weight: bold; margin-bottom: 5px"
+        >Phone</span
+      >
+      <p-inputMask
+        mask="(9*) 999-999-9999"
+        [(ngModel)]="input_mask2"
+        placeholder="(91) 000-000-0000"
+      ></p-inputMask>
+    </div>
+
+    <div class="flex-auto" style="flex: auto">
+      <span
+        class="font-bold block mb-2"
+        style="display: block; font-weight: bold; margin-bottom: 5px"
+        >Serial Number</span
+      >
+      <p-inputMask
+        mask="a*-999-a999"
+        [(ngModel)]="input_mask3"
+        placeholder="a*-999-a999"
+      ></p-inputMask>
+    </div>
+  </div>
+  <h1 style="font-size: 18px; margin-top: 1rem">input Mask</h1>
+</div>
+<hr />
+<!-- Basic InputText -->
+<div
+  class="card flex justify-content-center"
+  style="width: 100%; display: grid; flex-direction: column"
+>
+  <div class="card flex flex-wrap justify-content-center gap-4">
+    <span class="p-input-icon-left" style="margin-right: 10px">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText [(ngModel)]="input_text1" />
+    </span>
+
+    <span class="p-input-icon-right">
+      <i class="pi pi-spin pi-spinner"></i>
+      <input type="text" pInputText [(ngModel)]="input_text2" />
+    </span>
+  </div>
+  <h1 style="font-size: 18px; margin-top: 1rem">Basic InputText</h1>
+</div>
+<hr />
+<!-- Help TextInput -->
+<div
+  class="card flex justify-content-center"
+  style="display: flex; flex-direction: column; width: 100%; margin-top: 15px"
+>
+  <div
+    class="flex flex-column gap-2"
+    style="
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      width: 25%;
+    "
+  >
+    <label for="username" style="margin-bottom: 5px">Username</label>
+    <input
+      pInputText
+      id="username"
+      aria-describedby="username-help"
+      [(ngModel)]="input_text3"
+    />
+    <small id="username-help" style="margin-top: 5px"
+      >Enter your username to reset your password.</small
+    >
+  </div>
+  <div
+    class="flex flex-column gap-2"
+    style="
+      display: flex;
+      flex-direction: column;
+      margin-top: 1.5rem;
+      width: 25%;
+    "
+  >
+    <span class="p-float-label">
+      <input pInputText id="username" [(ngModel)]="input_text4" />
+      <label for="username">Username</label>
+    </span>
+  </div>
+  <h1 style="font-size: 18px; margin-top: 1.5rem">Help Text & Float label</h1>
+</div>
+<hr />
+
+<!-- Text Area -->
+<div class="card flex justify-content-center" style="padding: 1.5rem 0">
+  <span class="p-float-label">
+    <textarea
+      id="float-input"
+      rows="5"
+      cols="50"
+      pInputTextarea
+      [autoResize]="true"
+    ></textarea>
+    <label for="float-input">Summary</label>
+  </span>
+  <h1 style="font-size: 18px; margin-top: 1.5rem">
+    Text Area with Float label
+  </h1>
+</div>
+
+<hr />
+<!-- Input currency -->
+<div
+  class="card flex flex-wrap gap-3 p-fluid"
+  style="
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1rem;
+  "
+>
+  <div class="flex-auto" style="width: 25%">
+    <label
+      class="block font-bold mb-2"
+      for="currency-us"
+      style="margin-bottom: 5px; display: block"
+      >United States</label
+    >
+    <p-inputNumber
+      [(ngModel)]="Input_Number1"
+      inputId="currency-us"
+      mode="currency"
+      currency="USD"
+      locale="en-US"
+    >
+    </p-inputNumber>
+  </div>
+  <div class="flex-auto" style="width: 25%">
+    <label
+      class="block font-bold mb-2"
+      for="currency-germany"
+      style="margin-bottom: 5px; display: block"
+      >Germany</label
+    >
+    <p-inputNumber
+      [(ngModel)]="Input_Number2"
+      mode="currency"
+      inputId="currency-germany"
+      currency="EUR"
+      locale="de-DE"
+    >
+    </p-inputNumber>
+  </div>
+  <div class="flex-auto" style="width: 25%">
+    <label
+      class="block font-bold mb-2"
+      for="currency-india"
+      style="margin-bottom: 5px; display: block"
+      >India</label
+    >
+    <p-inputNumber
+      [(ngModel)]="Input_Number3"
+      mode="currency"
+      inputId="currency-india"
+      currency="INR"
+      currencyDisplay="code"
+      locale="en-IN"
+    >
+    </p-inputNumber>
+  </div>
+  <div class="flex-auto" style="width: 25%">
+    <label
+      class="block font-bold mb-2"
+      for="currency-japan"
+      style="margin-bottom: 5px; display: block"
+      >Japan</label
+    >
+    <p-inputNumber
+      [(ngModel)]="Input_Number4"
+      mode="currency"
+      inputId="currency-japan"
+      currency="JPY"
+      locale="jp-JP"
+    >
+    </p-inputNumber>
+  </div>
+</div>
+<h1 style="font-size: 18px; margin-top: 1.5rem">Input currency</h1>
+
+<hr />
+
+<!-- Radio Button -->
+<div
+  class="card flex justify-content-center"
+  style="width: 80%; display: flex; flex-direction: column; margin: 2rem 0"
+>
+  <div
+    class="flex flex-wrap gap-3"
+    style="display: flex; flex-wrap: wrap; gap: 10px"
+  >
+    <div class="flex align-items-center">
+      <p-radioButton
+        name="pizza"
+        value="Cheese"
+        [(ngModel)]="ingredient"
+        inputId="ingredient1"
+      ></p-radioButton>
+      <label
+        for="ingredient1"
+        class="ml-2"
+        style="margin-left: 5px; margin-right: 1rem"
+        >Cheese</label
+      >
+    </div>
+
+    <div class="flex align-items-center">
+      <p-radioButton
+        name="pizza"
+        value="Mushroom"
+        [(ngModel)]="ingredient"
+        inputId="ingredient2"
+      ></p-radioButton>
+      <label
+        for="ingredient2"
+        class="ml-2"
+        style="margin-left: 5px; margin-right: 1rem"
+        >Mushroom</label
+      >
+    </div>
+
+    <div class="flex align-items-center">
+      <p-radioButton
+        name="pizza"
+        value="Pepper"
+        [(ngModel)]="ingredient"
+        inputId="ingredient3"
+      ></p-radioButton>
+      <label
+        for="ingredient3"
+        class="ml-2"
+        style="margin-left: 5px; margin-right: 1rem"
+        >Pepper</label
+      >
+    </div>
+
+    <div class="flex align-items-center">
+      <p-radioButton
+        name="pizza"
+        value="Onion"
+        [(ngModel)]="ingredient"
+        inputId="ingredient4"
+      ></p-radioButton>
+      <label
+        for="ingredient4"
+        class="ml-2"
+        style="margin-left: 5px; margin-right: 1rem"
+        >Onion</label
+      >
+    </div>
+  </div>
+  <h1 style="font-size: 18px; margin-top: 1.5rem; width: 100%">Radio Button</h1>
+</div>
+<hr />
+<!-- checkbox -->
+<div
+  class="card flex flex-wrap gap-3 p-fluid"
+  style="
+    display: flex;
+    width: 70%;
+    gap: 10px;
+    flex-direction: column;
+    margin-top: 1rem;
+  "
+>
+  <div
+    class="card flex justify-content-center gap-3"
+    style="display: flex; flex-wrap: wrap; gap: 10px"
+  >
+    <div style="margin-right: 10px">
+      <p-checkbox name="groupname" value="val1" label="Value 1"></p-checkbox>
+    </div>
+    <p-checkbox name="groupname" value="val2" label="Value 2"></p-checkbox>
+  </div>
+  <h1 style="font-size: 18px; margin-top: 1.5rem">Input Checkbox</h1>
+</div>

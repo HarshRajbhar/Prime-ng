@@ -25,12 +25,21 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { InputFormComponent } from './input-form/input-form.component';
+import { InputMaskModule } from 'primeng/inputmask';
+
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { CheckboxModule } from 'primeng/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
     PrimeGridComponent,
     PrimeTableComponent,
     OtherCompoComponent,
+    InputFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +53,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
     InplaceModule,
     TagModule,
     ScrollerModule,
+    InputNumberModule,
     SliderModule,
     FormsModule,
     AccordionModule,
@@ -55,6 +65,11 @@ import { ProgressBarModule } from 'primeng/progressbar';
     PanelModule,
     DialogModule,
     ProgressBarModule,
+    InputMaskModule,
+    InputTextModule,
+    InputTextareaModule,
+    RadioButtonModule,
+    CheckboxModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
