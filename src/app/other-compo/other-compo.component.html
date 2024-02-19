@@ -81,7 +81,7 @@
   </div>
   <hr />
   <!-- Org Chart -->
-  <div>
+  <div class="my-5">
     <p-organizationChart [value]="TreeNodeData"></p-organizationChart>
     <h1 style="font-size: 20px; text-align: center; margin-top: 1rem">
       organizationChart Component
@@ -90,7 +90,7 @@
   <hr />
   <!-- Timeline -->
   <div class="accordion">
-    <p-timeline [value]="Timeline">
+    <p-timeline [value]="Timeline" class="mt-5">
       <ng-template pTemplate="content" let-event>
         {{ event.status }}
       </ng-template>
