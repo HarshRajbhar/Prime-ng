@@ -1,15 +1,25 @@
 import { Component } from '@angular/core';
-import { InputControllerComponent } from '../input-controller/input-controller.component';
-import { ButtonModule } from 'primeng/button';
 import {
   FormBuilder,
   FormControl,
-  FormControlName,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { InputControllerComponent } from '../input-controller/input-controller.component';
 import { TextareaControllerComponent } from '../textarea-controller/textarea-controller.component';
+import { TableModule } from 'primeng/table';
+import Swal from 'sweetalert2';
+import { NgIf } from '@angular/common';
+
+interface enquiry {
+  name: string;
+  Phone: number;
+  email: string;
+  msg: string;
+}
+
 @Component({
   selector: 'app-form-page',
   standalone: true,
@@ -18,6 +28,8 @@ import { TextareaControllerComponent } from '../textarea-controller/textarea-con
     ButtonModule,
     ReactiveFormsModule,
     TextareaControllerComponent,
+    TableModule,
+    NgIf,
   ],
   templateUrl: './form-page.component.html',
   styleUrl: './form-page.component.scss',
@@ -66,8 +78,22 @@ export class FormPageComponent {
     // M_number: 'Enter You Mobile Number',
     // Email: 'Enter Your Email',
   };
-
+  EnquiryArray: enquiry[] = [];
   Submit() {
+    Swal.fire({
+      title: 'Success',
+      text: 'Thank you for interest, we will contact you soon!',
+      icon: 'success',
+    });
+    this.EnquiryArray.push({
+      name: `${
+        this.reactiveForm.value.form?.F_name! +
+        this.reactiveForm.value.form?.L_name!
+      }`,
+      Phone: this.reactiveForm.value.form?.M_number!,
+      email: this.reactiveForm.value.form?.email!,
+      msg: this.reactiveForm.value.form?.message!,
+    });
     console.log(this.reactiveForm.value);
   }
 }

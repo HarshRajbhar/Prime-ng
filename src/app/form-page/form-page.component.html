@@ -1,5 +1,7 @@
 <section class="w-full flex flex-col items-center">
-  <header class="w-full p-5 text-center text-[32px] underline">Enquiry Form</header>
+  <header class="w-full p-5 text-center text-[32px] underline">
+    Enquiry Form
+  </header>
   <div
     class="w-[45%] flex flex-col mt-5 items-center"
     [formGroup]="reactiveForm"
@@ -47,5 +49,34 @@
         [disabled]="reactiveForm.invalid"
       ></p-button>
     </div>
+  </div>
+</section>
+
+<section *ngIf="EnquiryArray && EnquiryArray.length > 0">
+  <header class="w-full p-5 text-center text-[32px] underline">
+    All Enquiry
+  </header>
+
+  <div class="w-full my-3">
+    <p-table [value]="EnquiryArray" [tableStyle]="{ 'min-width': '100%' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Message</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product let-rowIndex="rowIndex">
+        <tr>
+          <td>{{ rowIndex + 1 }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.Phone }}</td>
+          <td>{{ product.email }}</td>
+          <td>{{ product.msg }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
   </div>
 </section>
