@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'input-Form',
+    redirectTo: 'table',
     pathMatch: 'full',
   },
 ];

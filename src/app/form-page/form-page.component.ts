@@ -80,20 +80,30 @@ export class FormPageComponent {
   };
   EnquiryArray: enquiry[] = [];
   Submit() {
-    Swal.fire({
-      title: 'Success',
-      text: 'Thank you for interest, we will contact you soon!',
-      icon: 'success',
-    });
-    this.EnquiryArray.push({
-      name: `${
-        this.reactiveForm.value.form?.F_name! +
-        this.reactiveForm.value.form?.L_name!
-      }`,
-      Phone: this.reactiveForm.value.form?.M_number!,
-      email: this.reactiveForm.value.form?.email!,
-      msg: this.reactiveForm.value.form?.message!,
-    });
-    console.log(this.reactiveForm.value);
+    if (this.reactiveForm.valid) {
+      Swal.fire({
+        title: 'Success',
+        text: 'Thank you for interest, we will contact you soon!',
+        icon: 'success',
+      });
+      this.EnquiryArray.push({
+        name: `${
+          this.reactiveForm.value.form?.F_name! +
+          ' ' +
+          this.reactiveForm.value.form?.L_name!
+        }`,
+        Phone: this.reactiveForm.value.form?.M_number!,
+        email: this.reactiveForm.value.form?.email!,
+        msg: this.reactiveForm.value.form?.message!,
+      });
+      console.log(this.reactiveForm.value);
+    }
+    if (this.reactiveForm.invalid) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Please fill all the Fields!',
+        icon: 'error',
+      });
+    }
   }
 }
