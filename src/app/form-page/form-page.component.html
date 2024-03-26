@@ -1,0 +1,43 @@
+<section class="w-full flex flex-col items-center">
+  <header class="w-full p-5 text-center text-[32px]">Enquiry Form</header>
+  <div
+    class="w-[45%] flex flex-col mt-5 items-center"
+    [formGroup]="reactiveForm"
+  >
+    <div class="w-full flex justify-between items-center mb-2">
+      <app-input-controller
+        [placeholder]="InputTypes.firstName"
+        [group]="'form'"
+        [name]="'F_name'"
+        class="w-[45%]"
+      ></app-input-controller>
+      <app-input-controller
+        [placeholder]="InputTypes.lastname"
+        [group]="'form'"
+        [name]="'L_name'"
+        class="w-[45%]"
+      ></app-input-controller>
+    </div>
+    <div class="w-full flex justify-between items-center mb-2">
+      <app-input-controller
+        [placeholder]="InputTypes.M_number"
+        [group]="'form'"
+        [name]="'M_number'"
+        class="w-[45%]"
+      ></app-input-controller>
+      <app-input-controller
+        [placeholder]="InputTypes.Email"
+        [group]="'form'"
+        [name]="'email'"
+        class="w-[45%]"
+      ></app-input-controller>
+    </div>
+    <div class="w-full flex justify-center items-center my-5">
+      <p-button
+        label="Submit"
+        (onClick)="Submit()"
+        [disabled]="reactiveForm.invalid"
+      ></p-button>
+    </div>
+  </div>
+</section>

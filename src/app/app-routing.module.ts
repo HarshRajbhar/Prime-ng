@@ -18,8 +18,15 @@ const routes: Routes = [
     component: OtherCompoComponent,
   },
   {
+    path: 'input-Form',
+    loadComponent: () =>
+      import('./form-page/form-page.component').then(
+        (a) => a.FormPageComponent
+      ),
+  },
+  {
     path: '',
-    redirectTo: 'table',
+    redirectTo: 'input-Form',
     pathMatch: 'full',
   },
 ];

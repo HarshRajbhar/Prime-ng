@@ -12,6 +12,7 @@ export class AppComponent {
     { label: 'Prim-ng Table', url: '/table', icon: 'pi pi-fw pi-table' },
     { label: 'Prim-ng Grid', url: '/grid' },
     { label: 'Prim-ng Other components', url: '/others' },
+    { label: 'Prim-ng Form', url: '/input-Form' },
   ];
 
   activeItem: MenuItem = this.items[0];
