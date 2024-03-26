@@ -1,5 +1,5 @@
 <section class="w-full flex flex-col items-center">
-  <header class="w-full p-5 text-center text-[32px]">Enquiry Form</header>
+  <header class="w-full p-5 text-center text-[32px] underline">Enquiry Form</header>
   <div
     class="w-[45%] flex flex-col mt-5 items-center"
     [formGroup]="reactiveForm"
@@ -31,6 +31,14 @@
         [name]="'email'"
         class="w-[45%]"
       ></app-input-controller>
+    </div>
+    <div class="w-full flex justify-between items-center mb-2">
+      <app-textarea-controller
+        [placeholder]="InputTypes.message"
+        [group]="'form'"
+        [name]="'message'"
+        class="w-full"
+      ></app-textarea-controller>
     </div>
     <div class="w-full flex justify-center items-center my-5">
       <p-button

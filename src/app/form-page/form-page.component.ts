@@ -9,10 +9,16 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { TextareaControllerComponent } from '../textarea-controller/textarea-controller.component';
 @Component({
   selector: 'app-form-page',
   standalone: true,
-  imports: [InputControllerComponent, ButtonModule, ReactiveFormsModule],
+  imports: [
+    InputControllerComponent,
+    ButtonModule,
+    ReactiveFormsModule,
+    TextareaControllerComponent,
+  ],
   templateUrl: './form-page.component.html',
   styleUrl: './form-page.component.scss',
 })
@@ -28,6 +34,10 @@ export class FormPageComponent {
         Validators.maxLength(10),
       ]),
       email: new FormControl(null, [Validators.required, Validators.email]),
+      message: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(1),
+      ]),
     }),
   });
 
@@ -47,6 +57,10 @@ export class FormPageComponent {
     Email: {
       type: 'text',
       placeholder: 'Enter Your Email',
+    },
+    message: {
+      type: '',
+      placeholder: 'Message',
     },
 
     // M_number: 'Enter You Mobile Number',
