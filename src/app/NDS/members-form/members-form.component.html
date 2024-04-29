@@ -1,0 +1,16 @@
+<header class="p-3 text-[#37338c] font-bold text-[18px] bg-slate-300 w-full">
+  Member Registration Details
+</header>
+<section>
+  <!-- Page 1 -->
+  <div *ngIf="page === '1'" class="flex flex-col p-2">
+    <!-- [formGroup]="reactiveForm" -->
+    <div class="w-[45%] flex gap-x-2 items-center my-3">
+      <h1>Application Number :</h1>
+      <app-input-controller
+        [group]="'first'"
+        [name]="'app_no'"
+      ></app-input-controller>
+    </div>
+  </div>
+</section>

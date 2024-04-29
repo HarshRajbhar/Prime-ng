@@ -10,6 +10,11 @@ export class AppComponent {
   title = 'prime-ng-angular-app';
   items: MenuItem[] = [
     {
+      label: 'NDS Members Form',
+      url: '/nds/members-form',
+      icon: 'pi pi-fw pi-table',
+    },
+    {
       label: 'Prim-ng Controller Form',
       url: '/input-Form',
       icon: 'pi pi-fw pi-table',

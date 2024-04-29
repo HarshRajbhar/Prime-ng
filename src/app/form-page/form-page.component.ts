@@ -7,8 +7,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
-import { InputControllerComponent } from '../input-controller/input-controller.component';
-import { TextareaControllerComponent } from '../textarea-controller/textarea-controller.component';
+import { InputControllerComponent } from '../controller/input-controller/input-controller.component';
+import { TextareaControllerComponent } from '../controller/textarea-controller/textarea-controller.component';
 import { TableModule } from 'primeng/table';
 import Swal from 'sweetalert2';
 import { NgIf } from '@angular/common';

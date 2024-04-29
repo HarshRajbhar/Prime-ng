@@ -17,6 +17,7 @@ const routes: Routes = [
     path: 'others',
     component: OtherCompoComponent,
   },
+
   {
     path: 'input-Form',
     loadComponent: () =>
@@ -30,8 +31,15 @@ const routes: Routes = [
       import('./ag-grid/ag-grid.component').then((a) => a.AgGridComponent),
   },
   {
+    path: 'nds/members-form',
+    loadComponent: () =>
+      import('./NDS/members-form/members-form.component').then(
+        (a) => a.MembersFormComponent
+      ),
+  },
+  {
     path: '',
-    redirectTo: 'table',
+    redirectTo: 'nds/members-form',
     pathMatch: 'full',
   },
 ];
