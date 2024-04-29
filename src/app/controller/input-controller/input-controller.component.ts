@@ -1,3 +1,4 @@
+import { NgClass, NgStyle } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import {
   FormGroup,
@@ -12,7 +13,7 @@ interface typeData {
 @Component({
   selector: 'app-input-controller',
   standalone: true,
-  imports: [InputTextModule, ReactiveFormsModule],
+  imports: [InputTextModule, ReactiveFormsModule, NgStyle,NgClass],
   templateUrl: './input-controller.component.html',
   styleUrl: './input-controller.component.scss',
 })
@@ -20,6 +21,7 @@ export class InputControllerComponent implements OnInit {
   @Input() group!: string;
   @Input() name!: string;
   @Input() placeholder!: typeData;
+  @Input() className!: any;
   FormControlVal!: FormGroup;
   constructor(private rootFormGroup: FormGroupDirective) {}
   ngOnInit(): void {

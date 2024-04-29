@@ -18,11 +18,20 @@ import {
 })
 export class MembersFormComponent {
   page: '1' | '2' | '3' = '1';
-  // constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {}
 
-  // reactiveForm = new FormGroup({
-  //   first: this.fb.group({
-  //     app_no: new FormControl(null, [Validators.required]),
-  //   }),
-  // });
+  reactiveForm = new FormGroup({
+    first: this.fb.group({
+      app_no: new FormControl(null, [Validators.required]),
+      app_name: new FormControl(null, [Validators.required]),
+    }),
+  });
+  InputTypes = {
+    page_1: {
+      app_no: {
+        type: 'text',
+        placeholder: 'Appliaction number',
+      },
+    },
+  };
 }

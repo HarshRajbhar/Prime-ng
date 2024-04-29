@@ -3,14 +3,28 @@
 </header>
 <section>
   <!-- Page 1 -->
-  <div *ngIf="page === '1'" class="flex flex-col p-2">
-    <!-- [formGroup]="reactiveForm" -->
-    <div class="w-[45%] flex gap-x-2 items-center my-3">
-      <h1>Application Number :</h1>
-      <app-input-controller
-        [group]="'first'"
-        [name]="'app_no'"
-      ></app-input-controller>
+  <div
+    *ngIf="page === '1'"
+    class="flex flex-col p-2"
+    [formGroup]="reactiveForm"
+  >
+    <!-- Application Number -->
+    <div class="w-[45%] flex flex-col gap-y-1 my-3">
+      <h1 class="pl-2 reuire">Application Number</h1>
+      <div class="w-full flex gap-x-2 items-center">
+        <app-input-controller
+          class="w-[45%]"
+          [placeholder]="InputTypes.page_1.app_no"
+          [group]="'first'"
+          [name]="'app_no'"
+          [className]="'application-numb'"
+        ></app-input-controller>
+        <button
+          class="text-center text-white py-2 px-4 text-[14px] bg-[#323273] hover:bg-[#323273ef] rounded-[5px]"
+        >
+          Search
+        </button>
+      </div>
     </div>
   </div>
 </section>
