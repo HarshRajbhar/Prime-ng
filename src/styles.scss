@@ -1,5 +1,8 @@
 @layer tailwind-base, primeng, tailwind-utilities;
 @import "primeicons/primeicons.css";
+@import "ag-grid-community/styles/ag-grid.css";
+/* Quartz Theme Specific CSS */
+@import "ag-grid-community/styles/ag-theme-quartz.css";
 
 @layer tailwind-base {
   @tailwind base;
@@ -9,6 +12,8 @@
   @tailwind components;
   @tailwind utilities;
 }
+/* Core Grid CSS */
+
 * {
   font-family: "Comfortaa", sans-serif;
 }

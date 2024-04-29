@@ -25,6 +25,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'ag-grid',
+    loadComponent: () =>
+      import('./ag-grid/ag-grid.component').then((a) => a.AgGridComponent),
+  },
+  {
     path: '',
     redirectTo: 'table',
     pathMatch: 'full',
