@@ -8,22 +8,37 @@
     class="flex flex-col p-2"
     [formGroup]="reactiveForm"
   >
-    <!-- Application Number -->
-    <div class="w-[45%] flex flex-col gap-y-1 my-3">
-      <h1 class="pl-2 reuire">Application Number</h1>
-      <div class="w-full flex gap-x-2 items-center">
-        <app-input-controller
-          class="w-[45%]"
-          [placeholder]="InputTypes.page_1.app_no"
-          [group]="'first'"
-          [name]="'app_no'"
-          [className]="'application-numb'"
-        ></app-input-controller>
-        <button
-          class="text-center text-white py-2 px-4 text-[14px] bg-[#323273] hover:bg-[#323273ef] rounded-[5px]"
-        >
-          Search
-        </button>
+    <div class="row w-full flex gap-6 items-center">
+      <!-- Application Number -->
+      <div class="w-[30%] flex flex-col gap-y-1 my-3">
+        <h1 class="pl-2 reuire">Application Number</h1>
+        <div class="w-full flex gap-x-2 items-center">
+          <app-input-controller
+            class="w-full"
+            [placeholder]="InputTypes.page_1.app_no"
+            [group]="'first'"
+            [name]="'app_no'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+          <button
+            class="text-center text-white py-2 px-4 text-[14px] bg-[#323273] hover:bg-[#323273ef] rounded-[5px]"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+      <!-- Application Number -->
+      <div class="w-[30%] flex flex-col gap-y-1 my-3">
+        <h1 class="pl-2 reuire">{{ InputTypes.page_1.app_name.placeholder}}</h1>
+        <div class="w-full flex gap-x-2 items-center">
+          <app-input-controller
+            class="w-full"
+            [placeholder]="InputTypes.page_1.app_name"
+            [group]="'first'"
+            [name]="'app_name'"
+            [className]="'application-name'"
+          ></app-input-controller>
+        </div>
       </div>
     </div>
   </div>

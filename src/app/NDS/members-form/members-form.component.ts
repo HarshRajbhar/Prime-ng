@@ -32,6 +32,10 @@ export class MembersFormComponent {
         type: 'text',
         placeholder: 'Appliaction number',
       },
+      app_name: {
+        type: 'text',
+        placeholder: 'Applicant Name',
+      },
     },
   };
 }
