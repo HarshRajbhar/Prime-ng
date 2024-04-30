@@ -9,10 +9,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { DropdownControllerComponent } from '../../controller/dropdown-controller/dropdown-controller.component';
+import { Gender } from '../../../assets/NDS_data';
 
-interface City {
-  name: string;
-  code: string;
+interface dropdown {
+  id: string;
+  value: string;
 }
 
 @Component({
@@ -30,15 +31,18 @@ interface City {
 export class MembersFormComponent {
   page: '1' | '2' | '3' = '1';
 
-  cities = [{ name: 'New York', code: 'NY' }, {}];
+  GenderArray = Gender;
+
   constructor(private fb: FormBuilder) {}
 
   reactiveForm = new FormGroup({
     first: this.fb.group({
       app_no: new FormControl(null, [Validators.required]),
       app_name: new FormControl(null, [Validators.required]),
+      gender: new FormControl<dropdown | null>(null, [Validators.required]),
     }),
   });
+
   InputTypes = {
     page_1: {
       app_no: {

@@ -1,11 +1,10 @@
-<div class="card flex justify-content-center">
-  <form [formGroup]="formGroup">
-    <p-dropdown
-      formControlName="selectedCity"
-      [options]="cities"
-      optionLabel="name"
-      placeholder="Select a City"
-      (onChange)="getData()"
-    ></p-dropdown>
-  </form>
+<div [formGroup]="FormControlVal">
+  <p-dropdown
+    id="drop-down"
+    [formControlName]="name"
+    [options]="DropdownArray"
+    [optionLabel]="label"
+    [placeholder]="placeholder"
+    [ngClass]="className"
+  ></p-dropdown>
 </div>
