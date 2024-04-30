@@ -10,6 +10,7 @@ import {
 } from '@angular/forms';
 import { DropdownControllerComponent } from '../../controller/dropdown-controller/dropdown-controller.component';
 import { Gender, relation } from '../../../assets/NDS_data';
+import { CalendarControllerComponent } from '../../controller/calendar-controller/calendar-controller.component';
 
 interface dropdown {
   id: string;
@@ -24,6 +25,7 @@ interface dropdown {
     InputControllerComponent,
     ReactiveFormsModule,
     DropdownControllerComponent,
+    CalendarControllerComponent
   ],
   templateUrl: './members-form.component.html',
   styleUrl: './members-form.component.scss',

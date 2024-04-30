@@ -8,6 +8,7 @@
     class="flex flex-col p-2"
     [formGroup]="reactiveForm"
   >
+    <!-- first -->
     <div class="row w-[70%] flex gap-6 items-center">
       <!-- Application Number -->
       <div class="w-[60%] flex flex-col gap-y-1 my-3">
@@ -15,8 +16,9 @@
         <div class="w-full flex gap-x-2 items-center">
           <app-input-controller
             class="w-full"
-            [placeholder]="InputTypes.page_1.app_no"
+            [placeholder]="'Appliaction number'"
             [group]="'first'"
+            [type]="'text'"
             [name]="'app_no'"
             [className]="'application-numb'"
           ></app-input-controller>
@@ -29,14 +31,13 @@
       </div>
       <!-- Application Number -->
       <div class="w-[40%] flex flex-col gap-y-1 my-3">
-        <h1 class="pl-2 reuire">
-          {{ InputTypes.page_1.app_name.placeholder }}
-        </h1>
+        <h1 class="pl-2 reuire">Applicant Name</h1>
         <div class="w-full flex items-center">
           <app-input-controller
             class="w-full"
-            [placeholder]="InputTypes.page_1.app_name"
+            [placeholder]="'Applicant Name'"
             [group]="'first'"
+            [type]="'text'"
             [name]="'app_name'"
             [className]="'application-name'"
           ></app-input-controller>
@@ -59,14 +60,13 @@
       </div>
       <!-- Relation name -->
       <div class="w-[45%] flex flex-col gap-y-1 my-3">
-        <h1 class="pl-2">
-          {{ InputTypes.page_1.relation_name.placeholder }}
-        </h1>
+        <h1 class="pl-2">Relation Name</h1>
         <div class="w-full flex items-center">
           <app-input-controller
             class="w-full"
-            [placeholder]="InputTypes.page_1.relation_name"
+            [placeholder]="'Relation Name'"
             [group]="'first'"
+            [type]="'text'"
             [name]="'relation_name'"
             [className]="'application-name'"
           ></app-input-controller>
@@ -84,6 +84,10 @@
           [label]="'name'"
         ></app-dropdown-controller>
       </div>
+    </div>
+    <!-- Third -->
+    <div class="row w-[70%] flex gap-6 items-center">
+      <app-calendar-controller></app-calendar-controller>
     </div>
   </div>
 </section>

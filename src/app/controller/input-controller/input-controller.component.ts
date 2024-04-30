@@ -13,14 +13,15 @@ interface typeData {
 @Component({
   selector: 'app-input-controller',
   standalone: true,
-  imports: [InputTextModule, ReactiveFormsModule, NgStyle,NgClass],
+  imports: [InputTextModule, ReactiveFormsModule, NgStyle, NgClass],
   templateUrl: './input-controller.component.html',
   styleUrl: './input-controller.component.scss',
 })
 export class InputControllerComponent implements OnInit {
   @Input() group!: string;
   @Input() name!: string;
-  @Input() placeholder!: typeData;
+  @Input() placeholder!: string;
+  @Input() type!: string;
   @Input() className!: any;
   FormControlVal!: FormGroup;
   constructor(private rootFormGroup: FormGroupDirective) {}
