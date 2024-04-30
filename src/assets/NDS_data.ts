@@ -14,3 +14,14 @@ export const Gender: dropdown[] = [
     code: 'Transgender',
   },
 ];
+
+export const relation: dropdown[] = [
+  {
+    name: 'Father',
+    code: 'Father',
+  },
+  {
+    name: 'Husband',
+    code: 'Husband',
+  },
+];

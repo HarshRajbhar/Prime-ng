@@ -3,7 +3,11 @@
     &.ng-touched {
       .p-dropdown {
         border-color: red;
+        width: 100%;
       }
     }
+  }
+  .p-dropdown {
+    width: 100%;
   }
 }

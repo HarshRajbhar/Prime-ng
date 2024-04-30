@@ -9,7 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { DropdownControllerComponent } from '../../controller/dropdown-controller/dropdown-controller.component';
-import { Gender } from '../../../assets/NDS_data';
+import { Gender, relation } from '../../../assets/NDS_data';
 
 interface dropdown {
   id: string;
@@ -32,6 +32,7 @@ export class MembersFormComponent {
   page: '1' | '2' | '3' = '1';
 
   GenderArray = Gender;
+  relationArray = relation;
 
   constructor(private fb: FormBuilder) {}
 
@@ -39,6 +40,8 @@ export class MembersFormComponent {
     first: this.fb.group({
       app_no: new FormControl(null, [Validators.required]),
       app_name: new FormControl(null, [Validators.required]),
+      relation: new FormControl<dropdown | null>(null),
+      relation_name: new FormControl(null),
       gender: new FormControl<dropdown | null>(null, [Validators.required]),
     }),
   });
@@ -52,6 +55,10 @@ export class MembersFormComponent {
       app_name: {
         type: 'text',
         placeholder: 'Applicant Name',
+      },
+      relation_name: {
+        type: 'text',
+        placeholder: 'Relation Name',
       },
     },
   };
