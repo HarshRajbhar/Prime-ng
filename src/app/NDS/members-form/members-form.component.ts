@@ -8,16 +8,29 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { DropdownControllerComponent } from '../../controller/dropdown-controller/dropdown-controller.component';
+
+interface City {
+  name: string;
+  code: string;
+}
 
 @Component({
   selector: 'app-members-form',
   standalone: true,
-  imports: [NgIf, InputControllerComponent, ReactiveFormsModule],
+  imports: [
+    NgIf,
+    InputControllerComponent,
+    ReactiveFormsModule,
+    DropdownControllerComponent,
+  ],
   templateUrl: './members-form.component.html',
   styleUrl: './members-form.component.scss',
 })
 export class MembersFormComponent {
   page: '1' | '2' | '3' = '1';
+
+  cities = [{ name: 'New York', code: 'NY' }, {}];
   constructor(private fb: FormBuilder) {}
 
   reactiveForm = new FormGroup({

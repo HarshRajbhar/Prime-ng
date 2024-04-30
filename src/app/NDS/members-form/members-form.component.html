@@ -29,7 +29,9 @@
       </div>
       <!-- Application Number -->
       <div class="w-[30%] flex flex-col gap-y-1 my-3">
-        <h1 class="pl-2 reuire">{{ InputTypes.page_1.app_name.placeholder}}</h1>
+        <h1 class="pl-2 reuire">
+          {{ InputTypes.page_1.app_name.placeholder }}
+        </h1>
         <div class="w-full flex gap-x-2 items-center">
           <app-input-controller
             class="w-full"
@@ -39,6 +41,10 @@
             [className]="'application-name'"
           ></app-input-controller>
         </div>
+      </div>
+      <div class="w-[30%] flex flex-col gap-y-1 my-3">
+        <h1 class="pl-2 reuire">City</h1>
+        <app-dropdown-controller></app-dropdown-controller>
       </div>
     </div>
   </div>
