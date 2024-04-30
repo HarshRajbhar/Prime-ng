@@ -1,5 +1,5 @@
 <header
-  class="p-3 text-[var(--primary-color)] font-bold text-[18px] bg-slate-300 w-full"
+  class="p-2 text-[var(--primary-color)] font-bold text-[18px] bg-slate-300 w-full"
 >
   Member Registration Details
 </header>
@@ -7,7 +7,7 @@
   <!-- Page 1 -->
   <div
     *ngIf="page === '1'"
-    class="flex flex-col p-2 gap-y-3"
+    class="flex flex-col p-2 mb-5 gap-y-3"
     [formGroup]="reactiveForm"
   >
     <!-- first -->
@@ -48,9 +48,9 @@
       </div>
     </div>
     <!-- Second -->
-    <div class="row w-[70%] flex gap-3 items-center">
+    <div class="row Grid w-[70%] gap-3 items-center">
       <!-- Relation -->
-      <div class="w-[30%] flex flex-col gap-y-1">
+      <div class="w-[100%] flex flex-col gap-y-1">
         <h1 class="pl-2">Relation</h1>
         <app-dropdown-controller
           [DropdownArray]="RelationArray"
@@ -62,7 +62,7 @@
         ></app-dropdown-controller>
       </div>
       <!-- Relation name -->
-      <div class="w-[45%] flex flex-col gap-y-1">
+      <div class="w-[100%] flex flex-col gap-y-1">
         <h1 class="pl-2">Relation Name</h1>
         <div class="w-full flex items-center">
           <app-input-controller
@@ -76,7 +76,7 @@
         </div>
       </div>
       <!-- Gender -->
-      <div class="w-[25%] flex flex-col gap-y-1">
+      <div class="w-[100%] flex flex-col gap-y-1">
         <h1 class="pl-2 required">gender</h1>
         <app-dropdown-controller
           [DropdownArray]="GenderArray"
@@ -87,11 +87,11 @@
           [label]="'name'"
         ></app-dropdown-controller>
       </div>
-    </div>
-    <!-- Third -->
-    <div class="row w-[70%] flex gap-3 items-center">
+      <!-- </div> -->
+      <!-- Third -->
+      <!-- <div class="row w-[70%] flex gap-3 items-center"> -->
       <!-- DOB -->
-      <div class="w-[18%] flex flex-col gap-y-1">
+      <div class="w-[100%] flex flex-col gap-y-1">
         <h1 class="pl-2 required">Date of Birth</h1>
         <app-calendar-controller
           [placeholder]="'DD/MM/YYYY'"
@@ -101,7 +101,7 @@
         ></app-calendar-controller>
       </div>
       <!-- Age -->
-      <div class="w-[17%] flex flex-col gap-y-1">
+      <div class="w-[100%] flex flex-col gap-y-1">
         <h1 class="pl-2 required">Age (In Years)</h1>
         <div class="w-full flex items-center">
           <app-input-controller
@@ -115,7 +115,7 @@
         </div>
       </div>
       <!-- Cast Category -->
-      <div class="w-[30%] flex flex-col gap-y-1">
+      <div class="w-[100%] flex flex-col gap-y-1">
         <h1 class="pl-2 required">Cast Category</h1>
         <app-dropdown-controller
           [DropdownArray]="CastCatArray"
@@ -127,7 +127,7 @@
         ></app-dropdown-controller>
       </div>
       <!-- qualification -->
-      <div class="w-[35%] flex flex-col gap-y-1">
+      <div class="w-[100%] flex flex-col gap-y-1">
         <h1 class="pl-2 required">Qualification</h1>
         <app-dropdown-controller
           [DropdownArray]="QualificationArray"
@@ -144,7 +144,7 @@
       [formGroup]="reactiveForm.controls.first"
       class="gap-y-3 flex flex-col"
     >
-      <header class="bg-[var(--primary-hover-color)] font-bold p-3 text-white">
+      <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
         Address and Contact Details
       </header>
       <!-- State , District , Tehsil , Village -->
@@ -276,6 +276,15 @@
           ></app-input-controller>
         </div>
       </div>
+    </section>
+    <!-- Milk Production -->
+    <section
+      [formGroup]="reactiveForm.controls.first"
+      class="gap-y-3 flex flex-col"
+    >
+      <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
+        Milk Production and Consumption Details
+      </header>
     </section>
   </div>
 </section>

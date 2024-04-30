@@ -79,6 +79,10 @@ export class MembersFormComponent {
     }),
   });
   change() {
+    if (this.reactiveForm.invalid) {
+      this.reactiveForm.markAllAsTouched();
+      
+    }
     console.log(this.reactiveForm.value.first);
   }
 }
