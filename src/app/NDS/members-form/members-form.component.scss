@@ -21,7 +21,12 @@
   }
 }
 
-.reuire {
+:host {
+  --primary-color: #323273;
+  --primary-hover-color: #323273ef;
+}
+
+.required {
   &::after {
     content: " *";
     color: red;
