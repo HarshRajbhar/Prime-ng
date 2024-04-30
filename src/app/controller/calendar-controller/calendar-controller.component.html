@@ -1,3 +1,9 @@
-<form [formGroup]="formGroup">
-  <p-calendar placeholder="" formControlName="date"></p-calendar>
-</form>
+<div [formGroup]="FormControlVal">
+  <p-calendar
+    [formControlName]="name"
+    [placeholder]="placeholder"
+    [dateFormat]="format"
+    [minDate]="minDate"
+    [maxDate]="maxDate"
+  ></p-calendar>
+</div>

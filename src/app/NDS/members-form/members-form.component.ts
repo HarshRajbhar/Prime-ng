@@ -25,7 +25,7 @@ interface dropdown {
     InputControllerComponent,
     ReactiveFormsModule,
     DropdownControllerComponent,
-    CalendarControllerComponent
+    CalendarControllerComponent,
   ],
   templateUrl: './members-form.component.html',
   styleUrl: './members-form.component.scss',
@@ -45,23 +45,10 @@ export class MembersFormComponent {
       relation: new FormControl<dropdown | null>(null),
       relation_name: new FormControl(null),
       gender: new FormControl<dropdown | null>(null, [Validators.required]),
+      dob: new FormControl(null, [Validators.required]),
     }),
   });
-
-  InputTypes = {
-    page_1: {
-      app_no: {
-        type: 'text',
-        placeholder: 'Appliaction number',
-      },
-      app_name: {
-        type: 'text',
-        placeholder: 'Applicant Name',
-      },
-      relation_name: {
-        type: 'text',
-        placeholder: 'Relation Name',
-      },
-    },
-  };
+  change() {
+    console.log(this.reactiveForm.value.first);
+  }
 }

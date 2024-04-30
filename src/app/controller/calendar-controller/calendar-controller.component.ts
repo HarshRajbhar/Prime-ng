@@ -1,5 +1,11 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  FormGroupDirective,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 
 @Component({
@@ -10,7 +16,18 @@ import { CalendarModule } from 'primeng/calendar';
   styleUrl: './calendar-controller.component.scss',
 })
 export class CalendarControllerComponent {
-  formGroup = new FormGroup({
-    date: new FormControl<Date | null>(null),
-  });
+  @Input() group!: string;
+  @Input() name!: string;
+  @Input() format: string = 'dd/mm/yy';
+  @Input() minDate: Date = new Date(Date.now());
+  @Input() maxDate!: Date;
+  @Input() placeholder!: string;
+
+  FormControlVal!: FormGroup;
+  constructor(private rootFormGroup: FormGroupDirective) {}
+  ngOnInit(): void {
+    this.FormControlVal = this.rootFormGroup.control.get(
+      this.group
+    ) as FormGroup;
+  }
 }
