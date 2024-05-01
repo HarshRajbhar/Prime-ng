@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -40,7 +40,7 @@ interface dropdown {
   templateUrl: './members-form.component.html',
   styleUrl: './members-form.component.scss',
 })
-export class MembersFormComponent {
+export class MembersFormComponent implements OnInit {
   page = '2';
 
   GenderArray = Gender;
@@ -54,6 +54,9 @@ export class MembersFormComponent {
   BankListArray = bank_name;
 
   constructor(private fb: FormBuilder) {}
+  ngOnInit(): void {
+    this.reactiveForm.controls.sec.controls.bank_details.controls.ifsc.disable();
+  }
 
   reactiveForm = new FormGroup({
     first: this.fb.group({
@@ -87,7 +90,7 @@ export class MembersFormComponent {
         Br_name: new FormControl<dropdown | null>(null, Validators.required),
         ifsc: new FormControl(null),
         ac_name: new FormControl(null),
-        ac_num: new FormControl(null, [Validators.required,Validators.min(0)]),
+        ac_num: new FormControl(null, [Validators.required, Validators.min(0)]),
       }),
     }),
   });
