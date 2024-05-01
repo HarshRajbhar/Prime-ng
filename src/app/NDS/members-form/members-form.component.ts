@@ -8,6 +8,8 @@ import {
   Validators,
 } from '@angular/forms';
 import {
+  bank_name,
+  branch_name,
   caste_category,
   district,
   Gender,
@@ -39,7 +41,7 @@ interface dropdown {
   styleUrl: './members-form.component.scss',
 })
 export class MembersFormComponent {
-  page: '1' | '2' | '3' = '1';
+  page = '2';
 
   GenderArray = Gender;
   RelationArray = relation;
@@ -48,6 +50,8 @@ export class MembersFormComponent {
   StateArray = state;
   DistrictArray = district;
   TehsilArray = tehsil;
+  BranchListArray = branch_name;
+  BankListArray = bank_name;
 
   constructor(private fb: FormBuilder) {}
 
@@ -77,6 +81,15 @@ export class MembersFormComponent {
         phone: new FormControl(null),
       }),
     }),
+    sec: this.fb.group({
+      bank_details: this.fb.group({
+        B_name: new FormControl<dropdown | null>(null),
+        Br_name: new FormControl<dropdown | null>(null, Validators.required),
+        ifsc: new FormControl(null),
+        ac_name: new FormControl(null),
+        ac_num: new FormControl(null, [Validators.required,Validators.min(0)]),
+      }),
+    }),
   });
   change() {
     if (this.reactiveForm.invalid) {
@@ -89,6 +102,9 @@ export class MembersFormComponent {
     if (this.reactiveForm.controls.first.invalid) {
       this.reactiveForm.controls.first.markAllAsTouched();
     }
+    setTimeout(() => {
+      this.page = '2';
+    }, 1000);
     if (this.reactiveForm.controls.first.valid) {
       console.log(this.reactiveForm.controls.first.value);
     }

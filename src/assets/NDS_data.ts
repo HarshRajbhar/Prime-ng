@@ -99,3 +99,24 @@ export const tehsil: dropdown[] = [
     name: 'demo',
   },
 ];
+
+export const bank_name: dropdown[] = [
+  {
+    code: '1',
+    name: 'ALLAHABAD BANK',
+  },
+  {
+    code: '2',
+    name: 'ANDHRA BANK',
+  },
+];
+export const branch_name: dropdown[] = [
+  {
+    code: '97',
+    name: 'ALWAR-ALLA0210430',
+  },
+  {
+    code: '1635',
+    name: 'ALWAR-codeIB000A587',
+  },
+];
