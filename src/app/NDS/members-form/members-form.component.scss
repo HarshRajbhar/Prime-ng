@@ -20,6 +20,13 @@
   .p-datepicker .p-datepicker-header {
     padding: unset;
   }
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    padding: 0.3rem 1rem;
+    span {
+      font-size: 13px;
+      font-weight: 900;
+    }
+  }
 }
 
 :host {
@@ -48,7 +55,7 @@ header {
   font-weight: bold;
 }
 
-.Grid {
+.row-Grid {
   display: grid;
   grid-template-columns: repeat(4, 24%);
 }

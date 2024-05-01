@@ -81,8 +81,16 @@ export class MembersFormComponent {
   change() {
     if (this.reactiveForm.invalid) {
       this.reactiveForm.markAllAsTouched();
-      
+      return;
     }
     console.log(this.reactiveForm.value.first);
+  }
+  FPage() {
+    if (this.reactiveForm.controls.first.invalid) {
+      this.reactiveForm.controls.first.markAllAsTouched();
+    }
+    if (this.reactiveForm.controls.first.valid) {
+      console.log(this.reactiveForm.controls.first.value);
+    }
   }
 }

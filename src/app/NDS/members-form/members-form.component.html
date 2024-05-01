@@ -48,7 +48,7 @@
       </div>
     </div>
     <!-- Second -->
-    <div class="row Grid w-[70%] gap-3 items-center">
+    <div class="row row-Grid w-[70%] gap-3 items-center">
       <!-- Relation -->
       <div class="w-[100%] flex flex-col gap-y-1">
         <h1 class="pl-2">Relation</h1>
@@ -278,13 +278,56 @@
       </div>
     </section>
     <!-- Milk Production -->
-    <section
+    <!-- <section
       [formGroup]="reactiveForm.controls.first"
       class="gap-y-3 flex flex-col"
     >
       <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
         Milk Production and Consumption Details
       </header>
-    </section>
+      <div
+        class="w-[70%] flex gap-3 flex-col rounded-[5px]"
+        style="border: 1px solid #ccc"
+      >
+        <header
+          class="w-full rounded-[5px] p-2 bg-[#ccc] flex justify-between items-center"
+        >
+          <h1 class="text-[var(--primary-color)] font-bold !text-[14px]">
+            Milk Production and Consumption Details
+          </h1>
+          <div>
+            <app-calendar-controller
+              [placeholder]="'DD/MM/YYYY'"
+              [group]="'first'"
+              [name]="'dob'"
+              [format]="'dd/mm/yy'"
+            ></app-calendar-controller>
+          </div>
+        </header>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Heifer No.</th>
+              <th>Dry Nos.</th>
+              <th>In Milk Nos.</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </section> -->
+
+    <!-- Next Btn -->
+    <div
+      style="border-top: 1px solid var(--primary-color)"
+      class="mt-3 w-full p-2"
+    >
+      <button
+        class="text-center text-white py-1.5 px-4 text-[14px] bg-[var(--primary-color)] hover:bg-[var(--primary-hover-color)] rounded-[5px]"
+        (click)="FPage()"
+      >
+        Next
+      </button>
+    </div>
   </div>
 </section>
