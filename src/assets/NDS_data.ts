@@ -93,6 +93,7 @@ export const district: dropdown[] = [
     name: 'Laddakh',
   },
 ];
+
 export const tehsil: dropdown[] = [
   {
     code: '44224',
@@ -110,6 +111,7 @@ export const bank_name: dropdown[] = [
     name: 'ANDHRA BANK',
   },
 ];
+
 export const branch_name: dropdown[] = [
   {
     code: '97',
@@ -118,5 +120,64 @@ export const branch_name: dropdown[] = [
   {
     code: '1635',
     name: 'ALWAR-codeIB000A587',
+  },
+];
+
+export const company: dropdown[] = [
+  {
+    code: '01',
+    name: 'Sakhi Mahila Milk Producer Company ltd.',
+  },
+];
+
+export const plant: dropdown[] = [
+  {
+    code: '01001',
+    name: 'Sakhi Plant - 01001',
+  },
+  {
+    code: '01002',
+    name: 'hp - 01002',
+  },
+];
+
+export const mcc: dropdown[] = [
+  {
+    code: '01001',
+    name: 'NIBHERA - 001',
+  },
+  {
+    code: '01002',
+    name: 'NARAYANPUR - 002',
+  },
+  {
+    code: '01003',
+    name: 'CHANANA - 003',
+  },
+  {
+    code: '01004',
+    name: 'RATANGARH - 004',
+  },
+];
+
+export const bmc: dropdown[] = [
+  {
+    code: '01001',
+    name: 'NIBHERA - 001',
+  },
+  {
+    code: '01007',
+    name: 'test - 007',
+  },
+];
+
+export const mpp: dropdown[] = [
+  {
+    code: '010000063',
+    name: 'BERLA - 001101',
+  },
+  {
+    code: '010000064',
+    name: 'GHAT - 001102',
   },
 ];

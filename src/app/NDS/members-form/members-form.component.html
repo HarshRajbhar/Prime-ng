@@ -473,8 +473,8 @@
         <h1 class="pl-2">Address</h1>
         <app-textarea-controller
           [placeholder]="'Address'"
-          [group]="'form'"
-          [name]="'message'"
+          [group]="'nominee_detail'"
+          [name]="'add'"
           [row]="4"
           class="w-full"
         ></app-textarea-controller>
@@ -485,6 +485,108 @@
       <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
         Village Details
       </header>
+      <!-- Company , Plant, MCC , BMC -->
+      <div class="row w-[70%] flex gap-3 items-center">
+        <!-- Company -->
+        <div class="w-[35%] flex flex-col gap-y-1">
+          <h1 class="pl-2">Company</h1>
+          <app-dropdown-controller
+            [DropdownArray]="CompanyArray"
+            class="w-full"
+            [placeholder]="'Select Company'"
+            [group]="'village_detail'"
+            [name]="'company'"
+            [label]="'name'"
+          ></app-dropdown-controller>
+        </div>
+        <!-- Plant -->
+        <div class="w-[22%] flex flex-col gap-y-1">
+          <h1 class="pl-2">Plant</h1>
+          <app-dropdown-controller
+            [DropdownArray]="PlantArray"
+            class="w-full"
+            [placeholder]="'Select Plant'"
+            [group]="'village_detail'"
+            [name]="'plant'"
+            [label]="'name'"
+          ></app-dropdown-controller>
+        </div>
+        <!-- MCC -->
+        <div class="w-[21.5%] flex flex-col gap-y-1">
+          <h1 class="pl-2">MCC</h1>
+          <app-dropdown-controller
+            [DropdownArray]="MCCArray"
+            class="w-full"
+            [placeholder]="'Select MCC'"
+            [group]="'village_detail'"
+            [name]="'mcc'"
+            [label]="'name'"
+          ></app-dropdown-controller>
+        </div>
+        <!-- BMC -->
+        <div class="w-[21.5%] flex flex-col gap-y-1">
+          <h1 class="pl-2">BMC</h1>
+          <app-dropdown-controller
+            [DropdownArray]="BMCArray"
+            class="w-full"
+            [placeholder]="'Select BMC'"
+            [group]="'village_detail'"
+            [name]="'bmc'"
+            [label]="'name'"
+          ></app-dropdown-controller>
+        </div>
+      </div>
+      <!-- MPP , Aadhar No. , Village, Hamlet -->
+      <div class="row w-[70%] flex gap-3 items-center">
+        <!-- MPP -->
+        <div class="w-[20%] flex flex-col gap-y-1">
+          <h1 class="pl-2 required">MPP</h1>
+          <app-dropdown-controller
+            [DropdownArray]="MPPArray"
+            class="w-full"
+            [placeholder]="'Select MPP'"
+            [group]="'village_detail'"
+            [name]="'mpp'"
+            [label]="'name'"
+          ></app-dropdown-controller>
+        </div>
+        <!-- Aadhar No. -->
+        <div class="w-[25%] flex flex-col gap-y-1">
+          <h1 class="pl-2 required">Aadhar No.</h1>
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Aadhar No.'"
+            [group]="'village_detail'"
+            [type]="'number'"
+            [name]="'aadhar_no'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
+        <!-- Village -->
+        <div class="w-[30%] flex flex-col gap-y-1">
+          <h1 class="pl-2">Village</h1>
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Village'"
+            [group]="'village_detail'"
+            [type]="'text'"
+            [name]="'village'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
+        <!-- Hamlet -->
+        <div class="w-[25%] flex flex-col gap-y-1">
+          <h1 class="pl-2">Hamlet</h1>
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Hamlet'"
+            [group]="'village_detail'"
+            [type]="'text'"
+            [name]="'hamlet'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
+      </div>
     </section>
     <!-- Next Btn -->
     <div

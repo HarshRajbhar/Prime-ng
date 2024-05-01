@@ -9,10 +9,15 @@ import {
 } from '@angular/forms';
 import {
   bank_name,
+  bmc,
   branch_name,
   caste_category,
+  company,
   district,
   Gender,
+  mcc,
+  mpp,
+  plant,
   qualification,
   relation,
   state,
@@ -54,6 +59,11 @@ export class MembersFormComponent implements OnInit {
   TehsilArray = tehsil;
   BranchListArray = branch_name;
   BankListArray = bank_name;
+  CompanyArray = company;
+  PlantArray = plant;
+  MCCArray = mcc;
+  BMCArray = bmc;
+  MPPArray = mpp;
 
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
@@ -100,6 +110,19 @@ export class MembersFormComponent implements OnInit {
         relation: new FormControl<dropdown | null>(null),
         add: new FormControl(null),
         g_name: new FormControl(null),
+      }),
+      village_detail: this.fb.group({
+        company: new FormControl<dropdown | null>(null),
+        plant: new FormControl<dropdown | null>(null),
+        mcc: new FormControl<dropdown | null>(null),
+        bmc: new FormControl<dropdown | null>(null),
+        mpp: new FormControl<dropdown | null>(null, Validators.required),
+        aadhar_no: new FormControl<dropdown | null>(null, [
+          Validators.required,
+          Validators.min(0),
+        ]),
+        village: new FormControl(null),
+        hamlet: new FormControl(null),
       }),
     }),
   });
