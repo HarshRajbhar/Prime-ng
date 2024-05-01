@@ -48,7 +48,7 @@ interface dropdown {
   styleUrl: './members-form.component.scss',
 })
 export class MembersFormComponent implements OnInit {
-  page = '2';
+  page = '1';
 
   GenderArray = Gender;
   RelationArray = relation;
