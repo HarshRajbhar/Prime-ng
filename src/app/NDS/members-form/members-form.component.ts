@@ -21,6 +21,7 @@ import {
 import { CalendarControllerComponent } from '../../controller/calendar-controller/calendar-controller.component';
 import { DropdownControllerComponent } from '../../controller/dropdown-controller/dropdown-controller.component';
 import { InputControllerComponent } from '../../controller/input-controller/input-controller.component';
+import { TextareaControllerComponent } from '../../controller/textarea-controller/textarea-controller.component';
 
 interface dropdown {
   id: string;
@@ -36,6 +37,7 @@ interface dropdown {
     ReactiveFormsModule,
     DropdownControllerComponent,
     CalendarControllerComponent,
+    TextareaControllerComponent,
   ],
   templateUrl: './members-form.component.html',
   styleUrl: './members-form.component.scss',
@@ -92,6 +94,13 @@ export class MembersFormComponent implements OnInit {
         ac_name: new FormControl(null),
         ac_num: new FormControl(null, [Validators.required, Validators.min(0)]),
       }),
+      nominee_detail: this.fb.group({
+        n_name: new FormControl(null),
+        n_age: new FormControl(null),
+        relation: new FormControl<dropdown | null>(null),
+        add: new FormControl(null),
+        g_name: new FormControl(null),
+      }),
     }),
   });
   change() {
@@ -110,6 +119,17 @@ export class MembersFormComponent implements OnInit {
     }, 1000);
     if (this.reactiveForm.controls.first.valid) {
       console.log(this.reactiveForm.controls.first.value);
+    }
+  }
+  SPage() {
+    if (this.reactiveForm.controls.first.invalid) {
+      this.reactiveForm.controls.sec.markAllAsTouched();
+    }
+    // setTimeout(() => {
+    //   this.page = '3';
+    // }, 1000);
+    if (this.reactiveForm.controls.sec.valid) {
+      console.log(this.reactiveForm.controls.sec.value);
     }
   }
 }

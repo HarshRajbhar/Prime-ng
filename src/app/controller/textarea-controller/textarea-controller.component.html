@@ -1,9 +1,9 @@
 <div [formGroup]="FormControlVal">
   <textarea
-    rows="5"
+    [rows]="row"
     pInputTextarea
     [formControlName]="name"
     class="w-full"
-    [placeholder]="placeholder.placeholder"
+    [placeholder]="placeholder"
   ></textarea>
 </div>

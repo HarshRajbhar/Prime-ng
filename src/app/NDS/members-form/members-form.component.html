@@ -337,42 +337,43 @@
   <!-- Page 2 -->
   <div
     *ngIf="page === '2'"
-    class="flex flex-col py-2 mb-5 gap-y-3 w-[100%]"
+    class="py-2 mb-5 w-[100%]"
     [formGroup]="reactiveForm.controls.sec"
   >
-    <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
-      Saving Bank Account Detail
-    </header>
-    <!-- Bank Name , Branch Name , Account Name -->
-    <div class="row w-[70%] flex gap-3 items-center">
-      <!-- Bank Name -->
-      <div class="w-[30%] flex flex-col gap-y-1">
-        <h1 class="pl-2">Bank Name</h1>
-        <app-dropdown-controller
-          [DropdownArray]="BankListArray"
-          class="w-full"
-          [placeholder]="'Select Bank Name'"
-          [group]="'bank_details'"
-          [name]="'B_name'"
-          [label]="'name'"
-        ></app-dropdown-controller>
-      </div>
-      <!-- Branch Name -->
-      <div class="w-[30%] flex flex-col gap-y-1">
-        <h1 class="pl-2 required">Branch Name</h1>
-        <app-dropdown-controller
-          [DropdownArray]="BranchListArray"
-          class="w-full"
-          [placeholder]="'Select Branch Name'"
-          [group]="'bank_details'"
-          [name]="'Br_name'"
-          [label]="'name'"
-        ></app-dropdown-controller>
-      </div>
-      <!-- Account Holder Name -->
-      <div class="w-[40%] flex flex-col gap-y-1">
-        <h1 class="pl-2 required">Name as Per Saving Account</h1>
-        <div class="w-full flex gap-x-2 items-center">
+    <!-- Saving Bank Account Detail -->
+    <section class="flex flex-col py-2 gap-y-3 w-[100%]">
+      <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
+        Saving Bank Account Detail
+      </header>
+      <!-- Bank Name , Branch Name , Account Name -->
+      <div class="row w-[70%] flex gap-3 items-center">
+        <!-- Bank Name -->
+        <div class="w-[30%] flex flex-col gap-y-1">
+          <h1 class="pl-2">Bank Name</h1>
+          <app-dropdown-controller
+            [DropdownArray]="BankListArray"
+            class="w-full"
+            [placeholder]="'Select Bank Name'"
+            [group]="'bank_details'"
+            [name]="'B_name'"
+            [label]="'name'"
+          ></app-dropdown-controller>
+        </div>
+        <!-- Branch Name -->
+        <div class="w-[30%] flex flex-col gap-y-1">
+          <h1 class="pl-2 required">Branch Name</h1>
+          <app-dropdown-controller
+            [DropdownArray]="BranchListArray"
+            class="w-full"
+            [placeholder]="'Select Branch Name'"
+            [group]="'bank_details'"
+            [name]="'Br_name'"
+            [label]="'name'"
+          ></app-dropdown-controller>
+        </div>
+        <!-- Account Holder Name -->
+        <div class="w-[40%] flex flex-col gap-y-1">
+          <h1 class="pl-2 required">Name as Per Saving Account</h1>
           <app-input-controller
             class="w-full"
             [placeholder]="'Name as Per Saving Account'"
@@ -383,13 +384,11 @@
           ></app-input-controller>
         </div>
       </div>
-    </div>
-    <!-- IFSC , Account No -->
-    <div class="row w-[70%] flex gap-3 items-center">
-      <!-- IFSC -->
-      <div class="w-[29%] flex flex-col gap-y-1">
-        <h1 class="pl-2">IFSC</h1>
-        <div class="w-full flex gap-x-2 items-center">
+      <!-- IFSC , Account No -->
+      <div class="row w-[70%] flex gap-3 items-center">
+        <!-- IFSC -->
+        <div class="w-[29%] flex flex-col gap-y-1">
+          <h1 class="pl-2">IFSC</h1>
           <app-input-controller
             class="w-full"
             [placeholder]="'IFSC'"
@@ -399,11 +398,9 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
-      </div>
-      <!-- Saving Account No. -->
-      <div class="w-[30%] flex flex-col gap-y-1">
-        <h1 class="pl-2 required">Saving Account No.</h1>
-        <div class="w-full flex gap-x-2 items-center">
+        <!-- Saving Account No. -->
+        <div class="w-[30%] flex flex-col gap-y-1">
+          <h1 class="pl-2 required">Saving Account No.</h1>
           <app-input-controller
             class="w-full"
             [placeholder]="'Saving Account No.'"
@@ -414,6 +411,92 @@
           ></app-input-controller>
         </div>
       </div>
+    </section>
+    <!-- Nominee Details -->
+    <section class="flex flex-col py-2 gap-y-3 w-[100%]">
+      <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
+        Nominee Details
+      </header>
+      <!-- Nominee Name , Relation , Gruadian Name , Age -->
+      <div class="row w-[70%] flex gap-3 items-center">
+        <!-- Nominee Name -->
+        <div class="w-[33%] flex flex-col gap-y-1">
+          <h1 class="pl-2">Nominee Name</h1>
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Nominee Name'"
+            [group]="'nominee_detail'"
+            [type]="'text'"
+            [name]="'n_name'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
+        <!-- Nominee Age -->
+        <div class="w-[27%] flex flex-col gap-y-1">
+          <h1 class="pl-2">Nominee Age (In Years)</h1>
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Nominee Age (In Years)'"
+            [group]="'nominee_detail'"
+            [type]="'text'"
+            [name]="'n_age'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
+        <!-- Relation -->
+        <div class="w-[20%] flex flex-col gap-y-1">
+          <h1 class="pl-2">Relation</h1>
+          <app-dropdown-controller
+            [DropdownArray]="RelationArray"
+            class="w-full"
+            [placeholder]="'Select Relation'"
+            [group]="'nominee_detail'"
+            [name]="'relation'"
+            [label]="'name'"
+          ></app-dropdown-controller>
+        </div>
+        <!-- Gruadian Name -->
+        <div class="w-[30%] flex flex-col gap-y-1">
+          <h1 class="pl-2">Gruadian Name</h1>
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Gruadian Name'"
+            [group]="'nominee_detail'"
+            [type]="'text'"
+            [name]="'g_name'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
+      </div>
+      <!-- Address -->
+      <div class="w-[70%] flex flex-col gap-y-1">
+        <h1 class="pl-2">Address</h1>
+        <app-textarea-controller
+          [placeholder]="'Address'"
+          [group]="'form'"
+          [name]="'message'"
+          [row]="4"
+          class="w-full"
+        ></app-textarea-controller>
+      </div>
+    </section>
+    <!-- Village Details -->
+    <section class="flex flex-col py-2 mb-3 gap-y-3 w-[100%]">
+      <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
+        Village Details
+      </header>
+    </section>
+    <!-- Next Btn -->
+    <div
+      style="border-top: 1px solid var(--primary-color)"
+      class="mt-3 w-full py-2"
+    >
+      <button
+        class="text-center text-white py-1.5 px-4 text-[14px] bg-[var(--primary-color)] hover:bg-[var(--primary-hover-color)] rounded-[5px]"
+        (click)="SPage()"
+      >
+        Next
+      </button>
     </div>
   </div>
 </section>

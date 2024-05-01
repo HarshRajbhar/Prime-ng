@@ -19,7 +19,8 @@ interface typeData {
 export class TextareaControllerComponent implements OnInit {
   @Input() group!: string;
   @Input() name!: string;
-  @Input() placeholder!: typeData;
+  @Input() placeholder!: string;
+  @Input() row: number = 5;
   FormControlVal!: FormGroup;
   constructor(private rootFormGroup: FormGroupDirective) {}
   ngOnInit(): void {
