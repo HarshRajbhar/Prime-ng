@@ -181,3 +181,33 @@ export const mpp: dropdown[] = [
     name: 'GHAT - 001102',
   },
 ];
+
+export const payment_mode: dropdown[] = [
+  {
+    code: 'Cash',
+    name: 'Cash',
+  },
+  {
+    code: 'Cheque',
+    name: 'Cheque',
+  },
+  {
+    code: 'DD',
+    name: 'DD',
+  },
+  {
+    code: 'Online Transfer',
+    name: 'Online Transfer',
+  },
+];
+
+export const member_type: dropdown[] = [
+  {
+    code: 'SHG',
+    name: 'SHG',
+  },
+  {
+    code: 'NONE',
+    name: 'NONE',
+  },
+];

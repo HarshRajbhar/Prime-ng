@@ -16,7 +16,9 @@ import {
   district,
   Gender,
   mcc,
+  member_type,
   mpp,
+  payment_mode,
   plant,
   qualification,
   relation,
@@ -48,7 +50,7 @@ interface dropdown {
   styleUrl: './members-form.component.scss',
 })
 export class MembersFormComponent implements OnInit {
-  page = '1';
+  page = '3';
 
   GenderArray = Gender;
   RelationArray = relation;
@@ -64,6 +66,8 @@ export class MembersFormComponent implements OnInit {
   MCCArray = mcc;
   BMCArray = bmc;
   MPPArray = mpp;
+  PaymentModeArray = payment_mode;
+  MemberTypeArray = member_type;
 
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
@@ -125,6 +129,20 @@ export class MembersFormComponent implements OnInit {
         hamlet: new FormControl(null),
       }),
     }),
+    third: this.fb.group({
+      ad_fee: new FormControl(null),
+      share_apply: new FormControl(null),
+      amt_deposit: new FormControl(null),
+      payment_mode: new FormControl<dropdown | null>(null),
+      bank_name: new FormControl<dropdown | null>(null),
+      br_name: new FormControl<dropdown | null>(null),
+      paymnet_ref: new FormControl(null),
+      tran_date: new FormControl(null, Validators.required),
+      amt: new FormControl(null),
+      member_type: new FormControl<dropdown | null>(null),
+      initial_value: new FormControl(null),
+      is_active: new FormControl(null),
+    }),
   });
   change() {
     if (this.reactiveForm.invalid) {
@@ -154,5 +172,8 @@ export class MembersFormComponent implements OnInit {
     if (this.reactiveForm.controls.sec.valid) {
       console.log(this.reactiveForm.controls.sec.value);
     }
+  }
+  Submit() {
+    console.log(this.reactiveForm.value);
   }
 }

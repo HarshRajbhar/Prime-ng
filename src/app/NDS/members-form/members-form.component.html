@@ -601,4 +601,158 @@
       </button>
     </div>
   </div>
+  <!-- Page 3 -->
+  <div *ngIf="page === '3'" class="flex flex-col py-2 gap-y-3 w-[100%]">
+    <!-- Admission Fee , Share Apply, Amount Deposit, -->
+    <div class="row w-[70%] flex gap-3 items-center">
+      <!-- Admission Fee -->
+      <div class="w-[29%] flex flex-col gap-y-1">
+        <h1 class="pl-2">Admission Fee</h1>
+        <app-input-controller
+          class="w-full"
+          [placeholder]="'Admission Fee'"
+          [group]="'third'"
+          [type]="'text'"
+          [name]="'ad_fee'"
+          [className]="'application-numb'"
+        ></app-input-controller>
+      </div>
+      <!-- Share Apply -->
+      <div class="w-[29%] flex flex-col gap-y-1">
+        <h1 class="pl-2">Share Apply</h1>
+        <app-input-controller
+          class="w-full"
+          [placeholder]="'Share Apply'"
+          [group]="'third'"
+          [type]="'text'"
+          [name]="'share_apply'"
+          [className]="'application-numb'"
+        ></app-input-controller>
+      </div>
+      <!-- Amount Deposit -->
+      <div class="w-[29%] flex flex-col gap-y-1">
+        <h1 class="pl-2">Amount Deposit</h1>
+        <app-input-controller
+          class="w-full"
+          [placeholder]="'Amount Deposit'"
+          [group]="'third'"
+          [type]="'text'"
+          [name]="'amt_deposit'"
+          [className]="'application-numb'"
+        ></app-input-controller>
+      </div>
+      <!-- Payment Mode -->
+      <div class="w-[30%] flex flex-col gap-y-1">
+        <h1 class="pl-2">Payment Mode</h1>
+        <app-dropdown-controller
+          [DropdownArray]="PaymentModeArray"
+          class="w-full"
+          [placeholder]="'Select Payment Mode'"
+          [group]="'third'"
+          [name]="'payment_mode'"
+          [label]="'name'"
+        ></app-dropdown-controller>
+      </div>
+    </div>
+    <!-- Bank Name , Branch Name , Member Type , Transection Date -->
+    <div class="row w-[70%] flex gap-3 items-center">
+      <!-- Bank Name -->
+      <div class="w-[30%] flex flex-col gap-y-1">
+        <h1 class="pl-2">Bank Name</h1>
+        <app-dropdown-controller
+          [DropdownArray]="BankListArray"
+          class="w-full"
+          [placeholder]="'Select Bank Name'"
+          [group]="'third'"
+          [name]="'bank_name'"
+          [label]="'name'"
+        ></app-dropdown-controller>
+      </div>
+      <!-- Branch Name -->
+      <div class="w-[30%] flex flex-col gap-y-1">
+        <h1 class="pl-2 required">Branch Name</h1>
+        <app-dropdown-controller
+          [DropdownArray]="BranchListArray"
+          class="w-full"
+          [placeholder]="'Select Branch Name'"
+          [group]="'third'"
+          [name]="'br_name'"
+          [label]="'name'"
+        ></app-dropdown-controller>
+      </div>
+      <!-- Member Type -->
+      <div class="w-[20%] flex flex-col gap-y-1">
+        <h1 class="pl-2">Member Type</h1>
+        <app-dropdown-controller
+          [DropdownArray]="MemberTypeArray"
+          class="w-full"
+          [placeholder]="'Select Member Type'"
+          [group]="'third'"
+          [name]="'member_type'"
+          [label]="'name'"
+        ></app-dropdown-controller>
+      </div>
+      <!-- Transection Date -->
+      <div class="w-[20%] flex flex-col gap-y-1">
+        <h1 class="pl-2 required">Transection Date</h1>
+        <app-calendar-controller
+          [placeholder]="'DD/MM/YYYY'"
+          [group]="'third'"
+          [name]="'tran_date'"
+          [format]="'dd/mm/yy'"
+        ></app-calendar-controller>
+      </div>
+    </div>
+    <!-- Amount , Payment Ref. No. , Initial Share Value , Is Active -->
+    <div class="row w-[70%] flex gap-3 items-center">
+      <!-- Amount -->
+      <div class="w-[25%] flex flex-col gap-y-1">
+        <h1 class="pl-2">Amount</h1>
+        <app-input-controller
+          class="w-full"
+          [placeholder]="'Amount'"
+          [group]="'third'"
+          [type]="'text'"
+          [name]="'amt'"
+          [className]="'application-numb'"
+        ></app-input-controller>
+      </div>
+      <!-- Payment Ref. No. -->
+      <div class="w-[25%] flex flex-col gap-y-1">
+        <h1 class="pl-2">Payment Ref. No.</h1>
+        <app-input-controller
+          class="w-full"
+          [placeholder]="'Payment Ref. No.'"
+          [group]="'third'"
+          [type]="'text'"
+          [name]="'paymnet_ref'"
+          [className]="'application-numb'"
+        ></app-input-controller>
+      </div>
+      <!-- Initial Share Value -->
+      <div class="w-[25%] flex flex-col gap-y-1">
+        <h1 class="pl-2">Initial Share Value</h1>
+        <app-input-controller
+          class="w-full"
+          [placeholder]="'Initial Share Value'"
+          [group]="'third'"
+          [type]="'text'"
+          [name]="'initial_value'"
+          [className]="'application-numb'"
+        ></app-input-controller>
+      </div>
+    </div>
+    <!-- Next Btn -->
+    <div
+      style="border-top: 1px solid var(--primary-color)"
+      class="mt-3 w-full py-2"
+    >
+      <button
+        class="text-center text-white py-1.5 px-4 text-[14px] bg-[var(--primary-color)] hover:bg-[var(--primary-hover-color)] rounded-[5px]"
+        (click)="Submit()"
+      >
+        Next
+      </button>
+    </div>
+  </div>
 </section>
