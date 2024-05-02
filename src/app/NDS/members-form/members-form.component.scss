@@ -1,8 +1,8 @@
 // .harsh {
 :host ::ng-deep {
   .p-inputtext {
-    padding: 0.3rem;
-    font-size: 12px;
+    padding: 0.2rem 0.3rem;
+    font-size: 11px;
     font-weight: bold;
   }
   .p-datepicker table {
@@ -23,7 +23,7 @@
   .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
     padding: 0.3rem 1rem;
     span {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
     }
   }
@@ -51,12 +51,12 @@
 
 header {
   h1 {
-    font-size: 13px;
+    font-size: 12px;
     text-transform: unset;
   }
 }
 h1 {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   color: var(--primary-color);
   text-transform: capitalize;

@@ -52,7 +52,7 @@ interface dropdown {
   styleUrl: './members-form.component.scss',
 })
 export class MembersFormComponent implements OnInit {
-  page = '1';
+  // page = '3';
 
   GenderArray = Gender;
   RelationArray = relation;
@@ -160,44 +160,8 @@ export class MembersFormComponent implements OnInit {
     console.log(this.reactiveForm.value.first);
   }
 
-  FPage() {
-    if (this.reactiveForm.controls.first.invalid) {
-      this.reactiveForm.controls.first.markAllAsTouched();
-    }
-    setTimeout(() => {
-      this.page = '2';
-    }, 1000);
-    if (this.reactiveForm.controls.first.valid) {
-      console.log(this.reactiveForm.controls.first.value);
-    }
-  }
-
-  SPage() {
-    if (this.reactiveForm.controls.first.invalid) {
-      this.reactiveForm.controls.sec.markAllAsTouched();
-    }
-    setTimeout(() => {
-      this.page = '3';
-    }, 1000);
-    if (this.reactiveForm.controls.sec.valid) {
-      console.log(this.reactiveForm.controls.sec.value);
-    }
-  }
-
-  NextPage() {
-    if (this.page === '1') {
-      this.FPage();
-      return;
-    }
-    if (this.page === '2') {
-      this.SPage();
-      return;
-    }
-  }
-
   Submit() {
-    this.reactiveForm.controls.third.markAllAsTouched();
-    console.log(this.reactiveForm.controls.third.value);
+    this.reactiveForm.markAllAsTouched();
     console.log(this.reactiveForm.value);
   }
 }
