@@ -29,6 +29,7 @@ import { CalendarControllerComponent } from '../../controller/calendar-controlle
 import { DropdownControllerComponent } from '../../controller/dropdown-controller/dropdown-controller.component';
 import { InputControllerComponent } from '../../controller/input-controller/input-controller.component';
 import { TextareaControllerComponent } from '../../controller/textarea-controller/textarea-controller.component';
+import { CheckboxControllerComponent } from '../../controller/checkbox-controller/checkbox-controller.component';
 
 interface dropdown {
   id: string;
@@ -45,6 +46,7 @@ interface dropdown {
     DropdownControllerComponent,
     CalendarControllerComponent,
     TextareaControllerComponent,
+    CheckboxControllerComponent,
   ],
   templateUrl: './members-form.component.html',
   styleUrl: './members-form.component.scss',
@@ -139,9 +141,9 @@ export class MembersFormComponent implements OnInit {
       paymnet_ref: new FormControl(null),
       tran_date: new FormControl(null, Validators.required),
       amt: new FormControl(null),
-      member_type: new FormControl<dropdown | null>(null),
-      initial_value: new FormControl(null),
-      is_active: new FormControl(null),
+      member_type: new FormControl<dropdown | null>(null, Validators.required),
+      initial_value: new FormControl(null, Validators.required),
+      is_active: new FormControl(false),
     }),
   });
   change() {
@@ -174,6 +176,8 @@ export class MembersFormComponent implements OnInit {
     }
   }
   Submit() {
+    this.reactiveForm.controls.third.markAllAsTouched();
+    console.log(this.reactiveForm.controls.third.value);
     console.log(this.reactiveForm.value);
   }
 }

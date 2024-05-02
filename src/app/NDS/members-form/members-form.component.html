@@ -670,7 +670,7 @@
       </div>
       <!-- Branch Name -->
       <div class="w-[30%] flex flex-col gap-y-1">
-        <h1 class="pl-2 required">Branch Name</h1>
+        <h1 class="pl-2">Branch Name</h1>
         <app-dropdown-controller
           [DropdownArray]="BranchListArray"
           class="w-full"
@@ -682,7 +682,7 @@
       </div>
       <!-- Member Type -->
       <div class="w-[20%] flex flex-col gap-y-1">
-        <h1 class="pl-2">Member Type</h1>
+        <h1 class="pl-2 required">Member Type</h1>
         <app-dropdown-controller
           [DropdownArray]="MemberTypeArray"
           class="w-full"
@@ -704,7 +704,7 @@
       </div>
     </div>
     <!-- Amount , Payment Ref. No. , Initial Share Value , Is Active -->
-    <div class="row w-[70%] flex gap-3 items-center">
+    <div class="row w-[70%] flex gap-3">
       <!-- Amount -->
       <div class="w-[25%] flex flex-col gap-y-1">
         <h1 class="pl-2">Amount</h1>
@@ -731,7 +731,7 @@
       </div>
       <!-- Initial Share Value -->
       <div class="w-[25%] flex flex-col gap-y-1">
-        <h1 class="pl-2">Initial Share Value</h1>
+        <h1 class="pl-2 required">Initial Share Value</h1>
         <app-input-controller
           class="w-full"
           [placeholder]="'Initial Share Value'"
@@ -740,6 +740,14 @@
           [name]="'initial_value'"
           [className]="'application-numb'"
         ></app-input-controller>
+      </div>
+      <!-- Is Active -->
+      <div class="w-[25%] flex gap-x-2 items-center">
+        <h1 class="pl-2">Is Active</h1>
+        <app-checkbox-controller
+          [group]="'third'"
+          [name]="'is_active'"
+        ></app-checkbox-controller>
       </div>
     </div>
     <!-- Next Btn -->
