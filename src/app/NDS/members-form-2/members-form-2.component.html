@@ -11,16 +11,13 @@
   </span> -->
   <h2 class="2xl:w-[1500px] 2xl:m-auto w-full">Member Registration Details</h2>
 </header>
-<section
-  [formGroup]="reactiveForm"
-  class="flex w-full py-2 justify-between 2xl:w-[1500px] 2xl:m-auto"
->
+<section [formGroup]="reactiveForm" class="2xl:w-[1500px] 2xl:m-auto w-full">
   <!-- Page 1 -->
-  <div class="flex flex-col w-[32%] gap-y-3">
+  <div *ngIf="page === '1'" class="flex flex-col py-2 mb-5 gap-y-3">
     <!-- first -->
-    <div class="row w-[100%] flex flex-col gap-y-3 items-center">
+    <div class="row w-[100%] flex gap-3 items-center">
       <!-- Application Number -->
-      <div class="w-[100%] flex flex-col">
+      <div class="w-[25%] flex flex-col gap-y-1">
         <h1 class="pl-1 required">Application Number</h1>
         <div class="w-full flex gap-x-2 items-center">
           <app-input-controller
@@ -40,7 +37,7 @@
         </div>
       </div>
       <!-- Application Number -->
-      <div class="w-[100%] flex flex-col">
+      <div class="w-[35%] flex flex-col gap-y-1">
         <h1 class="pl-1 required">Applicant Name</h1>
         <div class="w-full flex items-center">
           <app-input-controller
@@ -53,98 +50,95 @@
           ></app-input-controller>
         </div>
       </div>
-      <div class="w-full flex justify-between">
-        <!-- Relation -->
-        <div class="w-[45%] flex flex-col">
-          <h1 class="pl-1">Relation</h1>
-          <app-dropdown-controller
-            [DropdownArray]="RelationArray"
+      <!-- Relation -->
+      <div class="w-[20%] flex flex-col gap-y-1">
+        <h1 class="pl-1">Relation</h1>
+        <app-dropdown-controller
+          [DropdownArray]="RelationArray"
+          class="w-full"
+          [placeholder]="'Select Relation'"
+          [group]="'first'"
+          [name]="'relation'"
+          [label]="'name'"
+        ></app-dropdown-controller>
+      </div>
+      <!-- Relation name -->
+      <div class="w-[20%] flex flex-col gap-y-1">
+        <h1 class="pl-1">Relation Name</h1>
+        <div class="w-full flex items-center">
+          <app-input-controller
             class="w-full"
-            [placeholder]="'Select Relation'"
+            [placeholder]="'Relation Name'"
             [group]="'first'"
-            [name]="'relation'"
-            [label]="'name'"
-          ></app-dropdown-controller>
-        </div>
-        <!-- Relation name -->
-        <div class="w-[53%] flex flex-col">
-          <h1 class="pl-1">Relation Name</h1>
-          <div class="w-full flex items-center">
-            <app-input-controller
-              class="w-full"
-              [placeholder]="'Relation Name'"
-              [group]="'first'"
-              [type]="'text'"
-              [name]="'relation_name'"
-              [className]="'application-name'"
-            ></app-input-controller>
-          </div>
+            [type]="'text'"
+            [name]="'relation_name'"
+            [className]="'application-name'"
+          ></app-input-controller>
         </div>
       </div>
-      <div class="flex w-[100%] justify-between items-center">
-        <!-- Gender -->
-        <div class="w-[32%] flex flex-col">
-          <h1 class="pl-1 required">gender</h1>
-          <app-dropdown-controller
-            [DropdownArray]="GenderArray"
+    </div>
+    <!-- Second -->
+    <div class="row flex w-[100%] gap-3 items-center">
+      <!-- Gender -->
+      <div class="w-[20%] flex flex-col gap-y-1">
+        <h1 class="pl-1 required">gender</h1>
+        <app-dropdown-controller
+          [DropdownArray]="GenderArray"
+          class="w-full"
+          [placeholder]="'Select Gender'"
+          [group]="'first'"
+          [name]="'gender'"
+          [label]="'name'"
+        ></app-dropdown-controller>
+      </div>
+      <!-- DOB -->
+      <div class="w-[20%] flex flex-col gap-y-1">
+        <h1 class="pl-1 required">Date of Birth</h1>
+        <app-calendar-controller
+          [placeholder]="'DD/MM/YYYY'"
+          [group]="'first'"
+          [name]="'dob'"
+          [format]="'dd/mm/yy'"
+        ></app-calendar-controller>
+      </div>
+      <!-- Age -->
+      <div class="w-[20%] flex flex-col gap-y-1">
+        <h1 class="pl-1 required">Age (In Years)</h1>
+        <div class="w-full flex items-center">
+          <app-input-controller
             class="w-full"
-            [placeholder]="'Select Gender'"
+            [placeholder]="'Age (In Years)'"
             [group]="'first'"
-            [name]="'gender'"
-            [label]="'name'"
-          ></app-dropdown-controller>
-        </div>
-        <!-- DOB -->
-        <div class="w-[32%] flex flex-col">
-          <h1 class="pl-1 required">Date of Birth</h1>
-          <app-calendar-controller
-            [placeholder]="'DD/MM/YYYY'"
-            [group]="'first'"
-            [name]="'dob'"
-            [format]="'dd/mm/yy'"
-          ></app-calendar-controller>
-        </div>
-        <!-- Age -->
-        <div class="w-[32%] flex flex-col">
-          <h1 class="pl-1 required">Age (In Years)</h1>
-          <div class="w-full flex items-center">
-            <app-input-controller
-              class="w-full"
-              [placeholder]="'Age (In Years)'"
-              [group]="'first'"
-              [type]="'number'"
-              [name]="'age'"
-              [maxlength]="2"
-              [className]="'application-name'"
-            ></app-input-controller>
-          </div>
+            [type]="'number'"
+            [name]="'age'"
+            [maxlength]="2"
+            [className]="'application-name'"
+          ></app-input-controller>
         </div>
       </div>
-      <div class="w-full flex justify-between">
-        <!-- Cast Category -->
-        <div class="w-[48%] flex flex-col">
-          <h1 class="pl-1 required">Cast Category</h1>
-          <app-dropdown-controller
-            [DropdownArray]="CastCatArray"
-            class="w-full"
-            [placeholder]="'Select Cast Category'"
-            [group]="'first'"
-            [name]="'cast_Cat'"
-            [label]="'name'"
-          ></app-dropdown-controller>
-        </div>
-        <!-- qualification -->
-        <div class="w-[48%] flex flex-col">
-          <h1 class="pl-1 required">Qualification</h1>
-          <app-dropdown-controller
-            [DropdownArray]="QualificationArray"
-            class="w-full"
-            [placeholder]="'Select Qualification'"
-            [group]="'first'"
-            [name]="'qualification'"
-            [label]="'name'"
-          ></app-dropdown-controller>
-        </div>
+      <!-- Cast Category -->
+      <div class="w-[20%] flex flex-col gap-y-1">
+        <h1 class="pl-1 required">Cast Category</h1>
+        <app-dropdown-controller
+          [DropdownArray]="CastCatArray"
+          class="w-full"
+          [placeholder]="'Select Cast Category'"
+          [group]="'first'"
+          [name]="'cast_Cat'"
+          [label]="'name'"
+        ></app-dropdown-controller>
+      </div>
+      <!-- qualification -->
+      <div class="w-[20%] flex flex-col gap-y-1">
+        <h1 class="pl-1 required">Qualification</h1>
+        <app-dropdown-controller
+          [DropdownArray]="QualificationArray"
+          class="w-full"
+          [placeholder]="'Select Qualification'"
+          [group]="'first'"
+          [name]="'qualification'"
+          [label]="'name'"
+        ></app-dropdown-controller>
       </div>
     </div>
     <!-- Address and Contact Details -->
@@ -156,9 +150,9 @@
         Address and Contact Details
       </header>
       <!-- State , District , Tehsil , Village , Hemlet  -->
-      <div class="w-full flex justify-between">
+      <div class="row w-[100%] flex gap-3 items-center">
         <!-- State -->
-        <div class="w-[34%] flex flex-col">
+        <div class="w-[20%] flex flex-col gap-y-1">
           <h1 class="pl-1">State</h1>
           <app-dropdown-controller
             [DropdownArray]="StateArray"
@@ -170,7 +164,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- District -->
-        <div class="w-[32%] flex flex-col">
+        <div class="w-[20%] flex flex-col gap-y-1">
           <h1 class="pl-1">District</h1>
           <app-dropdown-controller
             [DropdownArray]="DistrictArray"
@@ -182,7 +176,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- Tehsil -->
-        <div class="w-[32%] flex flex-col">
+        <div class="w-[20%] flex flex-col gap-y-1">
           <h1 class="pl-1">Tehsil</h1>
           <app-dropdown-controller
             [DropdownArray]="TehsilArray"
@@ -193,10 +187,8 @@
             [label]="'name'"
           ></app-dropdown-controller>
         </div>
-      </div>
-      <div class="w-full flex justify-between">
         <!-- Village -->
-        <div class="w-[34%] flex flex-col">
+        <div class="w-[20%] flex flex-col gap-y-1">
           <h1 class="pl-1">Village</h1>
           <app-dropdown-controller
             [DropdownArray]="StateArray"
@@ -208,7 +200,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- Hemlet -->
-        <div class="w-[32%] flex flex-col">
+        <div class="w-[20%] flex flex-col">
           <h1 class="pl-1">Hemlet</h1>
           <app-dropdown-controller
             [DropdownArray]="StateArray"
@@ -219,8 +211,11 @@
             [label]="'name'"
           ></app-dropdown-controller>
         </div>
+      </div>
+      <!-- house , post_office , pincode , Mobile No. , Phone No.  -->
+      <div class="row w-[100%] flex gap-3 items-center">
         <!-- house -->
-        <div class="w-[32%] flex flex-col">
+        <div class="w-[20%] flex flex-col">
           <h1 class="pl-1">House No.</h1>
           <app-input-controller
             class="w-full"
@@ -231,11 +226,8 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
-      </div>
-      <!-- house , post_office , pincode , Mobile No. , Phone No.  -->
-      <div class="row w-[100%] flex justify-between items-center">
         <!-- post_office -->
-        <div class="w-[26%] flex flex-col">
+        <div class="w-[20%] flex flex-col">
           <h1 class="pl-1">Post Office</h1>
           <app-input-controller
             class="w-full"
@@ -247,7 +239,7 @@
           ></app-input-controller>
         </div>
         <!-- pincode -->
-        <div class="w-[22%] flex flex-col">
+        <div class="w-[20%] flex flex-col">
           <h1 class="pl-1 required">Pincode</h1>
           <app-input-controller
             class="w-full"
@@ -259,7 +251,7 @@
           ></app-input-controller>
         </div>
         <!-- Mobile No. -->
-        <div class="w-[24%] flex flex-col">
+        <div class="w-[20%] flex flex-col">
           <h1 class="pl-1 required">Mobile No.</h1>
           <app-input-controller
             class="w-full"
@@ -271,7 +263,7 @@
           ></app-input-controller>
         </div>
         <!-- Phone No. -->
-        <div class="w-[24%] flex flex-col">
+        <div class="w-[20%] flex flex-col">
           <h1 class="pl-1">Phone No.</h1>
           <app-input-controller
             class="w-full"
@@ -284,19 +276,61 @@
         </div>
       </div>
     </section>
+    <!-- Milk Production -->
+    <!-- <section
+      [formGroup]="reactiveForm.controls.first"
+      class="gap-y-3 flex flex-col"
+    >
+      <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
+        Milk Production and Consumption Details
+      </header>
+      <div
+        class="w-[70%] flex gap-3 flex-col rounded-[5px]"
+        style="border: 1px solid #ccc"
+      >
+        <header
+          class="w-full rounded-[5px] p-2 bg-[#ccc] flex justify-between items-center"
+        >
+          <h1 class="text-[var(--primary-color)] font-bold !text-[14px]">
+            Milk Production and Consumption Details
+          </h1>
+          <div>
+            <app-calendar-controller
+              [placeholder]="'DD/MM/YYYY'"
+              [group]="'first'"
+              [name]="'dob'"
+              [format]="'dd/mm/yy'"
+            ></app-calendar-controller>
+          </div>
+        </header>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Heifer No.</th>
+              <th>Dry Nos.</th>
+              <th>In Milk Nos.</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </section> -->
   </div>
   <!-- Page 2 -->
-  <!-- *ngIf="page === '2'" -->
-  <div class="w-[33%]" [formGroup]="reactiveForm.controls.sec">
+  <div
+    *ngIf="page === '2'"
+    class="py-2 mb-5 w-[100%]"
+    [formGroup]="reactiveForm.controls.sec"
+  >
     <!-- Saving Bank Account Detail -->
-    <section class="flex flex-col mb-2 gap-y-3 w-[100%]">
+    <section class="flex flex-col py-2 gap-y-3 w-[100%]">
       <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
         Saving Bank Account Detail
       </header>
-      <!-- Bank Name , Branch Name  -->
+      <!-- Bank Name , Branch Name , Account Name , IFSC , Account No -->
       <div class="row w-[100%] flex gap-3 items-center">
         <!-- Bank Name -->
-        <div class="w-[49%] flex flex-col">
+        <div class="w-[22%] flex flex-col gap-y-1">
           <h1 class="pl-1">Bank Name</h1>
           <app-dropdown-controller
             [DropdownArray]="BankListArray"
@@ -308,7 +342,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- Branch Name -->
-        <div class="w-[49%] flex flex-col">
+        <div class="w-[23%] flex flex-col gap-y-1">
           <h1 class="pl-1 required">Branch Name</h1>
           <app-dropdown-controller
             [DropdownArray]="BranchListArray"
@@ -319,11 +353,8 @@
             [label]="'name'"
           ></app-dropdown-controller>
         </div>
-      </div>
-      <!-- Account Name , IFSC -->
-      <div class="w-full flex justify-between">
         <!-- Account Holder Name -->
-        <div class="w-[70%] flex flex-col">
+        <div class="w-[26%] flex flex-col gap-y-1">
           <h1 class="pl-1 required">Name as Per Saving Account</h1>
           <app-input-controller
             class="w-full"
@@ -335,7 +366,7 @@
           ></app-input-controller>
         </div>
         <!-- IFSC -->
-        <div class="w-[27%] flex flex-col">
+        <div class="w-[12%] flex flex-col gap-y-1">
           <h1 class="pl-1">IFSC</h1>
           <app-input-controller
             class="w-full"
@@ -346,18 +377,18 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
-      </div>
-      <!-- Saving Account No. -->
-      <div class="w-[50%] flex flex-col">
-        <h1 class="pl-1 required">Saving Account No.</h1>
-        <app-input-controller
-          class="w-full"
-          [placeholder]="'Saving Account No.'"
-          [group]="'bank_details'"
-          [type]="'number'"
-          [name]="'ac_num'"
-          [className]="'application-numb'"
-        ></app-input-controller>
+        <!-- Saving Account No. -->
+        <div class="w-[17%] flex flex-col gap-y-1">
+          <h1 class="pl-1 required">Saving Account No.</h1>
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Saving Account No.'"
+            [group]="'bank_details'"
+            [type]="'number'"
+            [name]="'ac_num'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
       </div>
     </section>
     <!-- Nominee Details -->
@@ -365,10 +396,10 @@
       <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
         Nominee Details
       </header>
-      <!-- Nominee Name, Gruadian Name -->
-      <div class="w-full flex justify-between">
+      <!-- Nominee Name , Relation , Gruadian Name , Age -->
+      <div class="row w-[100%] flex gap-3 items-center">
         <!-- Nominee Name -->
-        <div class="w-[49%] flex flex-col">
+        <div class="w-[22%] flex flex-col gap-y-1">
           <h1 class="pl-1">Nominee Name</h1>
           <app-input-controller
             class="w-full"
@@ -380,7 +411,7 @@
           ></app-input-controller>
         </div>
         <!-- Gruadian Name -->
-        <div class="w-[49%] flex flex-col">
+        <div class="w-[23%] flex flex-col gap-y-1">
           <h1 class="pl-1">Gruadian Name</h1>
           <app-input-controller
             class="w-full"
@@ -391,11 +422,8 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
-      </div>
-      <!-- Nominee Name , Relation , Gruadian Name , Age -->
-      <div class="w-[100%] gap-x-[2%] flex items-center">
         <!-- Relation -->
-        <div class="w-[40%] flex flex-col">
+        <div class="w-[12%] flex flex-col gap-y-1">
           <h1 class="pl-1">Relation</h1>
           <app-dropdown-controller
             [DropdownArray]="RelationArray"
@@ -407,7 +435,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- Nominee Age -->
-        <div class="w-[45%] flex flex-col">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1">Nominee Age (In Years)</h1>
           <app-input-controller
             class="w-full"
@@ -418,25 +446,25 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
-      </div>
-      <!-- Address -->
-      <div class="w-[100%] flex flex-col">
-        <h1 class="pl-1">Address</h1>
-        <!-- <app-textarea-controller
-          [placeholder]="'Address'"
-          [group]="'nominee_detail'"
-          [name]="'add'"
-          [row]="4"
-          class="w-full"
-        ></app-textarea-controller> -->
-        <app-input-controller
-          class="w-full"
-          [placeholder]="'Address'"
-          [group]="'nominee_detail'"
-          [type]="'text'"
-          [name]="'add'"
-          [className]="'application-numb'"
-        ></app-input-controller>
+        <!-- Address -->
+        <div class="w-[28%] flex flex-col gap-y-1">
+          <h1 class="pl-1">Address</h1>
+          <!-- <app-textarea-controller
+            [placeholder]="'Address'"
+            [group]="'nominee_detail'"
+            [name]="'add'"
+            [row]="4"
+            class="w-full"
+          ></app-textarea-controller> -->
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Address'"
+            [group]="'nominee_detail'"
+            [type]="'text'"
+            [name]="'add'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
       </div>
     </section>
     <!-- Village Details -->
@@ -444,10 +472,10 @@
       <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
         Village Details
       </header>
-      <!-- Company, Plant -->
-      <div class="w-full flex justify-between">
+      <!-- Company , Plant, MCC , BMC -->
+      <div class="row w-[100%] flex gap-3 items-center">
         <!-- Company -->
-        <div class="w-[49%] flex flex-col">
+        <div class="w-[22%] flex flex-col gap-y-1">
           <h1 class="pl-1">Company</h1>
           <app-dropdown-controller
             [DropdownArray]="CompanyArray"
@@ -459,7 +487,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- Plant -->
-        <div class="w-[49%] flex flex-col">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1">Plant</h1>
           <app-dropdown-controller
             [DropdownArray]="PlantArray"
@@ -470,11 +498,8 @@
             [label]="'name'"
           ></app-dropdown-controller>
         </div>
-      </div>
-      <!-- MCC , BMC ,MPP-->
-      <div class="w-full flex justify-between">
         <!-- MCC -->
-        <div class="w-[33%] flex flex-col">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1">MCC</h1>
           <app-dropdown-controller
             [DropdownArray]="MCCArray"
@@ -486,7 +511,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- BMC -->
-        <div class="w-[32%] flex flex-col">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1">BMC</h1>
           <app-dropdown-controller
             [DropdownArray]="BMCArray"
@@ -498,7 +523,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- MPP -->
-        <div class="w-[32%] flex flex-col">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1 required">MPP</h1>
           <app-dropdown-controller
             [DropdownArray]="MPPArray"
@@ -509,11 +534,8 @@
             [label]="'name'"
           ></app-dropdown-controller>
         </div>
-      </div>
-      <!--  Aadhar No. , Village, Hamlet -->
-      <div class="w-[100%] flex justify-between items-center">
         <!-- Village -->
-        <div class="w-[31%] flex flex-col">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1">Village</h1>
           <app-input-controller
             class="w-full"
@@ -524,20 +546,11 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
-        <!-- Hamlet -->
-        <div class="w-[31%] flex flex-col">
-          <h1 class="pl-1">Hamlet</h1>
-          <app-input-controller
-            class="w-full"
-            [placeholder]="'Hamlet'"
-            [group]="'village_detail'"
-            [type]="'text'"
-            [name]="'hamlet'"
-            [className]="'application-numb'"
-          ></app-input-controller>
-        </div>
+      </div>
+      <!-- MPP , Aadhar No. , Village, Hamlet -->
+      <div class="row w-[100%] flex gap-3 items-center">
         <!-- Aadhar No. -->
-        <div class="w-[36%] flex flex-col">
+        <div class="w-[23%] flex flex-col gap-y-1">
           <h1 class="pl-1 required">Aadhar No.</h1>
           <app-input-controller
             class="w-full"
@@ -548,15 +561,28 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
+
+        <!-- Hamlet -->
+        <div class="w-[18%] flex flex-col gap-y-1">
+          <h1 class="pl-1">Hamlet</h1>
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Hamlet'"
+            [group]="'village_detail'"
+            [type]="'text'"
+            [name]="'hamlet'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
       </div>
     </section>
   </div>
   <!-- Page 3 -->
-  <div class="flex flex-col gap-y-3 w-[32%]">
-    <!-- Admission Fee , Share Apply, Amount Deposit, -->
-    <div class="w-full flex justify-between">
+  <div *ngIf="page === '3'" class="flex flex-col py-2 gap-y-3 w-[100%]">
+    <!-- Admission Fee , Share Apply, Amount Deposit,Bank Name ,Member Type -->
+    <div class="row w-[100%] flex gap-3 items-center">
       <!-- Admission Fee -->
-      <div class="w-[32%] flex flex-col">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1">Admission Fee</h1>
         <app-input-controller
           class="w-full"
@@ -568,7 +594,7 @@
         ></app-input-controller>
       </div>
       <!-- Share Apply -->
-      <div class="w-[32%] flex flex-col">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1">Share Apply</h1>
         <app-input-controller
           class="w-full"
@@ -580,7 +606,7 @@
         ></app-input-controller>
       </div>
       <!-- Amount Deposit -->
-      <div class="w-[32%] flex flex-col">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1">Amount Deposit</h1>
         <app-input-controller
           class="w-full"
@@ -591,11 +617,8 @@
           [className]="'application-numb'"
         ></app-input-controller>
       </div>
-    </div>
-    <!-- Member Type , Payment Mode ,Transection Date -->
-    <div class="row w-[100%] flex justify-between items-center">
       <!-- Member Type -->
-      <div class="w-[32%] flex flex-col">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1 required">Member Type</h1>
         <app-dropdown-controller
           [DropdownArray]="MemberTypeArray"
@@ -607,7 +630,7 @@
         ></app-dropdown-controller>
       </div>
       <!-- Payment Mode -->
-      <div class="w-[34%] flex flex-col">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1">Payment Mode</h1>
         <app-dropdown-controller
           [DropdownArray]="PaymentModeArray"
@@ -618,21 +641,8 @@
           [label]="'name'"
         ></app-dropdown-controller>
       </div>
-      <!-- Transection Date -->
-      <div class="w-[30%] flex flex-col">
-        <h1 class="pl-1 required">Transection Date</h1>
-        <app-calendar-controller
-          [placeholder]="'DD/MM/YYYY'"
-          [group]="'third'"
-          [name]="'tran_date'"
-          [format]="'dd/mm/yy'"
-        ></app-calendar-controller>
-      </div>
-    </div>
-    <!-- Branch Name, Bank Name -->
-    <div class="w-full flex justify-between">
       <!-- Bank Name -->
-      <div class="w-[49%] flex flex-col">
+      <div class="w-[25%] flex flex-col gap-y-1">
         <h1 class="pl-1">Bank Name</h1>
         <app-dropdown-controller
           [DropdownArray]="BankListArray"
@@ -643,8 +653,11 @@
           [label]="'name'"
         ></app-dropdown-controller>
       </div>
+    </div>
+    <!--  Branch Name, Member Type , Transection Date , Amount , Payment Ref. No. , Initial Share Value , Is Active -->
+    <div class="row w-[100%] flex gap-3 items-center">
       <!-- Branch Name -->
-      <div class="w-[49%] flex flex-col">
+      <div class="w-[29%] flex flex-col gap-y-1">
         <h1 class="pl-1">Branch Name</h1>
         <app-dropdown-controller
           [DropdownArray]="BranchListArray"
@@ -655,11 +668,18 @@
           [label]="'name'"
         ></app-dropdown-controller>
       </div>
-    </div>
-    <!-- Amount , Payment Ref. No. , Initial Share Value , Is Active -->
-    <div class="row w-[100%] flex gap-3 items-center">
+      <!-- Transection Date -->
+      <div class="w-[15%] flex flex-col gap-y-1">
+        <h1 class="pl-1 required">Transection Date</h1>
+        <app-calendar-controller
+          [placeholder]="'DD/MM/YYYY'"
+          [group]="'third'"
+          [name]="'tran_date'"
+          [format]="'dd/mm/yy'"
+        ></app-calendar-controller>
+      </div>
       <!-- Amount -->
-      <div class="w-[33%] flex flex-col">
+      <div class="w-[14%] flex flex-col gap-y-1">
         <h1 class="pl-1">Amount</h1>
         <app-input-controller
           class="w-full"
@@ -671,7 +691,7 @@
         ></app-input-controller>
       </div>
       <!-- Payment Ref. No. -->
-      <div class="w-[33%] flex flex-col">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1">Payment Ref. No.</h1>
         <app-input-controller
           class="w-full"
@@ -683,7 +703,7 @@
         ></app-input-controller>
       </div>
       <!-- Initial Share Value -->
-      <div class="w-[33%] flex flex-col">
+      <div class="w-[16%] flex flex-col gap-y-1">
         <h1 class="pl-1 required">Initial Share Value</h1>
         <app-input-controller
           class="w-full"
@@ -696,23 +716,42 @@
       </div>
     </div>
     <!-- Is Active -->
-    <div class="w-[100%] flex gap-x-2 items-center">
+    <div class="w-[16%] flex gap-x-2 items-center">
       <h1 class="pl-1">Is Active</h1>
       <app-checkbox-controller
         [group]="'third'"
         [name]="'is_active'"
       ></app-checkbox-controller>
     </div>
-    <div
-      style="border-top: 1px solid var(--primary-color)"
-      class="mt-3 w-full py-2 flex items-center"
+  </div>
+  <!-- Next Btn -->
+  <div
+    style="border-top: 1px solid var(--primary-color)"
+    class="mt-3 w-full py-2 gap-2 flex items-center"
+  >
+    <!-- Previous -->
+    <button
+      *ngIf="page !== '1'"
+      class="text-center text-white py-1.5 px-4 text-[14px] bg-[var(--primary-color)] hover:bg-[var(--primary-hover-color)] rounded-[5px]"
+      (click)="page = (+page - 1).toString()"
     >
-      <button
-        class="text-center text-white py-1.5 px-4 text-[14px] bg-[var(--primary-color)] hover:bg-[var(--primary-hover-color)] rounded-[5px]"
-        (click)="Submit()"
-      >
-        Submit
-      </button>
-    </div>
+      Previous
+    </button>
+    <!-- Next -->
+    <button
+      *ngIf="page !== '3'"
+      class="text-center text-white py-1.5 px-4 text-[14px] bg-[var(--primary-color)] hover:bg-[var(--primary-hover-color)] rounded-[5px]"
+      (click)="NextPage()"
+    >
+      Next
+    </button>
+    <!-- Submit -->
+    <button
+      *ngIf="page === '3'"
+      class="text-center text-white py-1.5 px-4 text-[14px] bg-[var(--primary-color)] hover:bg-[var(--primary-hover-color)] rounded-[5px]"
+      (click)="Submit()"
+    >
+      Submit
+    </button>
   </div>
 </section>

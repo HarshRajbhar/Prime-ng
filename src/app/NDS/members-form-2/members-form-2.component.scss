@@ -1,0 +1,68 @@
+// .harsh {
+:host ::ng-deep {
+  .p-inputtext {
+    padding: 0.3rem;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .p-datepicker table {
+    td > span,
+    th > span {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 13px;
+    }
+    td,
+    th {
+      padding: 0.4rem;
+    }
+  }
+  .p-datepicker .p-datepicker-header {
+    padding: unset;
+  }
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    padding: 0.3rem 1rem;
+    span {
+      font-size: 13px;
+      font-weight: 900;
+    }
+  }
+  .p-dropdown-panel .p-dropdown-header {
+    padding: 0.7rem;
+  }
+}
+
+:host {
+  --primary-color: #323273;
+  --primary-hover-color: #323273ef;
+}
+
+.required {
+  &::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+  }
+}
+
+.border {
+  border: 1px solid black;
+}
+
+header {
+  h1 {
+    font-size: 13px;
+    text-transform: unset;
+  }
+}
+h1 {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: capitalize;
+}
+
+header {
+  font-size: 14px;
+  font-weight: bold;
+}

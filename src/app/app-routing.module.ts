@@ -38,6 +38,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'nds/members-form2',
+    loadComponent: () =>
+      import('./NDS/members-form-2/members-form-2.component').then(
+        (a) => a.MembersForm2Component
+      ),
+  },
+  {
     path: '',
     redirectTo: 'nds/members-form',
     pathMatch: 'full',
