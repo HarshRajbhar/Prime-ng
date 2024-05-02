@@ -1,11 +1,7 @@
 <section class="section">
   <div
-    style="
-      position: sticky;
-      top: 0;
-      border-bottom: 1px solid black;
-      z-index: 10000;
-    "
+    style="border-bottom: 1px solid black; z-index: 10000"
+    class="sticky top-0 2xl:w-[1500px] 2xl:m-auto w-full"
   >
     <p-tabMenu [model]="items" [activeItem]="activeItem">
       <ng-template pTemplate="item" let-item>
