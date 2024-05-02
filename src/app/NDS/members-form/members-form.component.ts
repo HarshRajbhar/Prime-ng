@@ -129,7 +129,8 @@ export class MembersFormComponent implements OnInit {
         mpp: new FormControl<dropdown | null>(null, Validators.required),
         aadhar_no: new FormControl<dropdown | null>(null, [
           Validators.required,
-          Validators.min(0),
+          Validators.minLength(12),
+          Validators.maxLength(12),
         ]),
         village: new FormControl(null),
         hamlet: new FormControl(null),

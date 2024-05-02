@@ -327,10 +327,10 @@
       <header class="bg-[var(--primary-hover-color)] font-bold p-2 text-white">
         Saving Bank Account Detail
       </header>
-      <!-- Bank Name , Branch Name , Account Name -->
-      <div class="row w-[70%] flex gap-3 items-center">
+      <!-- Bank Name , Branch Name , Account Name , IFSC , Account No -->
+      <div class="row w-[100%] flex gap-3 items-center">
         <!-- Bank Name -->
-        <div class="w-[30%] flex flex-col gap-y-1">
+        <div class="w-[22%] flex flex-col gap-y-1">
           <h1 class="pl-1">Bank Name</h1>
           <app-dropdown-controller
             [DropdownArray]="BankListArray"
@@ -342,7 +342,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- Branch Name -->
-        <div class="w-[30%] flex flex-col gap-y-1">
+        <div class="w-[23%] flex flex-col gap-y-1">
           <h1 class="pl-1 required">Branch Name</h1>
           <app-dropdown-controller
             [DropdownArray]="BranchListArray"
@@ -354,7 +354,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- Account Holder Name -->
-        <div class="w-[40%] flex flex-col gap-y-1">
+        <div class="w-[26%] flex flex-col gap-y-1">
           <h1 class="pl-1 required">Name as Per Saving Account</h1>
           <app-input-controller
             class="w-full"
@@ -365,11 +365,8 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
-      </div>
-      <!-- IFSC , Account No -->
-      <div class="row w-[70%] flex gap-3 items-center">
         <!-- IFSC -->
-        <div class="w-[29%] flex flex-col gap-y-1">
+        <div class="w-[12%] flex flex-col gap-y-1">
           <h1 class="pl-1">IFSC</h1>
           <app-input-controller
             class="w-full"
@@ -381,7 +378,7 @@
           ></app-input-controller>
         </div>
         <!-- Saving Account No. -->
-        <div class="w-[30%] flex flex-col gap-y-1">
+        <div class="w-[17%] flex flex-col gap-y-1">
           <h1 class="pl-1 required">Saving Account No.</h1>
           <app-input-controller
             class="w-full"
@@ -400,9 +397,9 @@
         Nominee Details
       </header>
       <!-- Nominee Name , Relation , Gruadian Name , Age -->
-      <div class="row w-[70%] flex gap-3 items-center">
+      <div class="row w-[100%] flex gap-3 items-center">
         <!-- Nominee Name -->
-        <div class="w-[33%] flex flex-col gap-y-1">
+        <div class="w-[22%] flex flex-col gap-y-1">
           <h1 class="pl-1">Nominee Name</h1>
           <app-input-controller
             class="w-full"
@@ -413,32 +410,8 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
-        <!-- Nominee Age -->
-        <div class="w-[27%] flex flex-col gap-y-1">
-          <h1 class="pl-1">Nominee Age (In Years)</h1>
-          <app-input-controller
-            class="w-full"
-            [placeholder]="'Nominee Age (In Years)'"
-            [group]="'nominee_detail'"
-            [type]="'text'"
-            [name]="'n_age'"
-            [className]="'application-numb'"
-          ></app-input-controller>
-        </div>
-        <!-- Relation -->
-        <div class="w-[20%] flex flex-col gap-y-1">
-          <h1 class="pl-1">Relation</h1>
-          <app-dropdown-controller
-            [DropdownArray]="RelationArray"
-            class="w-full"
-            [placeholder]="'Select Relation'"
-            [group]="'nominee_detail'"
-            [name]="'relation'"
-            [label]="'name'"
-          ></app-dropdown-controller>
-        </div>
         <!-- Gruadian Name -->
-        <div class="w-[30%] flex flex-col gap-y-1">
+        <div class="w-[23%] flex flex-col gap-y-1">
           <h1 class="pl-1">Gruadian Name</h1>
           <app-input-controller
             class="w-full"
@@ -449,17 +422,49 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
-      </div>
-      <!-- Address -->
-      <div class="w-[70%] flex flex-col gap-y-1">
-        <h1 class="pl-1">Address</h1>
-        <app-textarea-controller
-          [placeholder]="'Address'"
-          [group]="'nominee_detail'"
-          [name]="'add'"
-          [row]="4"
-          class="w-full"
-        ></app-textarea-controller>
+        <!-- Relation -->
+        <div class="w-[12%] flex flex-col gap-y-1">
+          <h1 class="pl-1">Relation</h1>
+          <app-dropdown-controller
+            [DropdownArray]="RelationArray"
+            class="w-full"
+            [placeholder]="'Select Relation'"
+            [group]="'nominee_detail'"
+            [name]="'relation'"
+            [label]="'name'"
+          ></app-dropdown-controller>
+        </div>
+        <!-- Nominee Age -->
+        <div class="w-[15%] flex flex-col gap-y-1">
+          <h1 class="pl-1">Nominee Age (In Years)</h1>
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Nominee Age (In Years)'"
+            [group]="'nominee_detail'"
+            [type]="'number'"
+            [name]="'n_age'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
+        <!-- Address -->
+        <div class="w-[28%] flex flex-col gap-y-1">
+          <h1 class="pl-1">Address</h1>
+          <!-- <app-textarea-controller
+            [placeholder]="'Address'"
+            [group]="'nominee_detail'"
+            [name]="'add'"
+            [row]="4"
+            class="w-full"
+          ></app-textarea-controller> -->
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Address'"
+            [group]="'nominee_detail'"
+            [type]="'text'"
+            [name]="'add'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
       </div>
     </section>
     <!-- Village Details -->
@@ -468,9 +473,9 @@
         Village Details
       </header>
       <!-- Company , Plant, MCC , BMC -->
-      <div class="row w-[70%] flex gap-3 items-center">
+      <div class="row w-[100%] flex gap-3 items-center">
         <!-- Company -->
-        <div class="w-[35%] flex flex-col gap-y-1">
+        <div class="w-[22%] flex flex-col gap-y-1">
           <h1 class="pl-1">Company</h1>
           <app-dropdown-controller
             [DropdownArray]="CompanyArray"
@@ -482,7 +487,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- Plant -->
-        <div class="w-[22%] flex flex-col gap-y-1">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1">Plant</h1>
           <app-dropdown-controller
             [DropdownArray]="PlantArray"
@@ -494,7 +499,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- MCC -->
-        <div class="w-[21.5%] flex flex-col gap-y-1">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1">MCC</h1>
           <app-dropdown-controller
             [DropdownArray]="MCCArray"
@@ -506,7 +511,7 @@
           ></app-dropdown-controller>
         </div>
         <!-- BMC -->
-        <div class="w-[21.5%] flex flex-col gap-y-1">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1">BMC</h1>
           <app-dropdown-controller
             [DropdownArray]="BMCArray"
@@ -517,11 +522,8 @@
             [label]="'name'"
           ></app-dropdown-controller>
         </div>
-      </div>
-      <!-- MPP , Aadhar No. , Village, Hamlet -->
-      <div class="row w-[70%] flex gap-3 items-center">
         <!-- MPP -->
-        <div class="w-[20%] flex flex-col gap-y-1">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1 required">MPP</h1>
           <app-dropdown-controller
             [DropdownArray]="MPPArray"
@@ -532,20 +534,8 @@
             [label]="'name'"
           ></app-dropdown-controller>
         </div>
-        <!-- Aadhar No. -->
-        <div class="w-[25%] flex flex-col gap-y-1">
-          <h1 class="pl-1 required">Aadhar No.</h1>
-          <app-input-controller
-            class="w-full"
-            [placeholder]="'Aadhar No.'"
-            [group]="'village_detail'"
-            [type]="'number'"
-            [name]="'aadhar_no'"
-            [className]="'application-numb'"
-          ></app-input-controller>
-        </div>
         <!-- Village -->
-        <div class="w-[30%] flex flex-col gap-y-1">
+        <div class="w-[15%] flex flex-col gap-y-1">
           <h1 class="pl-1">Village</h1>
           <app-input-controller
             class="w-full"
@@ -556,8 +546,24 @@
             [className]="'application-numb'"
           ></app-input-controller>
         </div>
+      </div>
+      <!-- MPP , Aadhar No. , Village, Hamlet -->
+      <div class="row w-[100%] flex gap-3 items-center">
+        <!-- Aadhar No. -->
+        <div class="w-[23%] flex flex-col gap-y-1">
+          <h1 class="pl-1 required">Aadhar No.</h1>
+          <app-input-controller
+            class="w-full"
+            [placeholder]="'Aadhar No.'"
+            [group]="'village_detail'"
+            [type]="'number'"
+            [name]="'aadhar_no'"
+            [className]="'application-numb'"
+          ></app-input-controller>
+        </div>
+
         <!-- Hamlet -->
-        <div class="w-[25%] flex flex-col gap-y-1">
+        <div class="w-[18%] flex flex-col gap-y-1">
           <h1 class="pl-1">Hamlet</h1>
           <app-input-controller
             class="w-full"
@@ -573,85 +579,46 @@
   </div>
   <!-- Page 3 -->
   <div *ngIf="page === '3'" class="flex flex-col py-2 gap-y-3 w-[100%]">
-    <!-- Admission Fee , Share Apply, Amount Deposit, -->
-    <div class="row w-[70%] flex gap-3 items-center">
+    <!-- Admission Fee , Share Apply, Amount Deposit,Bank Name ,Member Type -->
+    <div class="row w-[100%] flex gap-3 items-center">
       <!-- Admission Fee -->
-      <div class="w-[29%] flex flex-col gap-y-1">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1">Admission Fee</h1>
         <app-input-controller
           class="w-full"
           [placeholder]="'Admission Fee'"
           [group]="'third'"
-          [type]="'text'"
+          [type]="'number'"
           [name]="'ad_fee'"
           [className]="'application-numb'"
         ></app-input-controller>
       </div>
       <!-- Share Apply -->
-      <div class="w-[29%] flex flex-col gap-y-1">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1">Share Apply</h1>
         <app-input-controller
           class="w-full"
           [placeholder]="'Share Apply'"
           [group]="'third'"
-          [type]="'text'"
+          [type]="'number'"
           [name]="'share_apply'"
           [className]="'application-numb'"
         ></app-input-controller>
       </div>
       <!-- Amount Deposit -->
-      <div class="w-[29%] flex flex-col gap-y-1">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1">Amount Deposit</h1>
         <app-input-controller
           class="w-full"
           [placeholder]="'Amount Deposit'"
           [group]="'third'"
-          [type]="'text'"
+          [type]="'number'"
           [name]="'amt_deposit'"
           [className]="'application-numb'"
         ></app-input-controller>
       </div>
-      <!-- Payment Mode -->
-      <div class="w-[30%] flex flex-col gap-y-1">
-        <h1 class="pl-1">Payment Mode</h1>
-        <app-dropdown-controller
-          [DropdownArray]="PaymentModeArray"
-          class="w-full"
-          [placeholder]="'Select Payment Mode'"
-          [group]="'third'"
-          [name]="'payment_mode'"
-          [label]="'name'"
-        ></app-dropdown-controller>
-      </div>
-    </div>
-    <!-- Bank Name , Branch Name , Member Type , Transection Date -->
-    <div class="row w-[70%] flex gap-3 items-center">
-      <!-- Bank Name -->
-      <div class="w-[30%] flex flex-col gap-y-1">
-        <h1 class="pl-1">Bank Name</h1>
-        <app-dropdown-controller
-          [DropdownArray]="BankListArray"
-          class="w-full"
-          [placeholder]="'Select Bank Name'"
-          [group]="'third'"
-          [name]="'bank_name'"
-          [label]="'name'"
-        ></app-dropdown-controller>
-      </div>
-      <!-- Branch Name -->
-      <div class="w-[30%] flex flex-col gap-y-1">
-        <h1 class="pl-1">Branch Name</h1>
-        <app-dropdown-controller
-          [DropdownArray]="BranchListArray"
-          class="w-full"
-          [placeholder]="'Select Branch Name'"
-          [group]="'third'"
-          [name]="'br_name'"
-          [label]="'name'"
-        ></app-dropdown-controller>
-      </div>
       <!-- Member Type -->
-      <div class="w-[20%] flex flex-col gap-y-1">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1 required">Member Type</h1>
         <app-dropdown-controller
           [DropdownArray]="MemberTypeArray"
@@ -662,8 +629,47 @@
           [label]="'name'"
         ></app-dropdown-controller>
       </div>
+      <!-- Payment Mode -->
+      <div class="w-[15%] flex flex-col gap-y-1">
+        <h1 class="pl-1">Payment Mode</h1>
+        <app-dropdown-controller
+          [DropdownArray]="PaymentModeArray"
+          class="w-full"
+          [placeholder]="'Select Payment Mode'"
+          [group]="'third'"
+          [name]="'payment_mode'"
+          [label]="'name'"
+        ></app-dropdown-controller>
+      </div>
+      <!-- Bank Name -->
+      <div class="w-[25%] flex flex-col gap-y-1">
+        <h1 class="pl-1">Bank Name</h1>
+        <app-dropdown-controller
+          [DropdownArray]="BankListArray"
+          class="w-full"
+          [placeholder]="'Select Bank Name'"
+          [group]="'third'"
+          [name]="'bank_name'"
+          [label]="'name'"
+        ></app-dropdown-controller>
+      </div>
+    </div>
+    <!--  Branch Name, Member Type , Transection Date , Amount , Payment Ref. No. , Initial Share Value , Is Active -->
+    <div class="row w-[100%] flex gap-3 items-center">
+      <!-- Branch Name -->
+      <div class="w-[29%] flex flex-col gap-y-1">
+        <h1 class="pl-1">Branch Name</h1>
+        <app-dropdown-controller
+          [DropdownArray]="BranchListArray"
+          class="w-full"
+          [placeholder]="'Select Branch Name'"
+          [group]="'third'"
+          [name]="'br_name'"
+          [label]="'name'"
+        ></app-dropdown-controller>
+      </div>
       <!-- Transection Date -->
-      <div class="w-[20%] flex flex-col gap-y-1">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1 required">Transection Date</h1>
         <app-calendar-controller
           [placeholder]="'DD/MM/YYYY'"
@@ -672,53 +678,50 @@
           [format]="'dd/mm/yy'"
         ></app-calendar-controller>
       </div>
-    </div>
-    <!-- Amount , Payment Ref. No. , Initial Share Value , Is Active -->
-    <div class="row w-[70%] flex gap-3">
       <!-- Amount -->
-      <div class="w-[25%] flex flex-col gap-y-1">
+      <div class="w-[14%] flex flex-col gap-y-1">
         <h1 class="pl-1">Amount</h1>
         <app-input-controller
           class="w-full"
           [placeholder]="'Amount'"
           [group]="'third'"
-          [type]="'text'"
+          [type]="'number'"
           [name]="'amt'"
           [className]="'application-numb'"
         ></app-input-controller>
       </div>
       <!-- Payment Ref. No. -->
-      <div class="w-[25%] flex flex-col gap-y-1">
+      <div class="w-[15%] flex flex-col gap-y-1">
         <h1 class="pl-1">Payment Ref. No.</h1>
         <app-input-controller
           class="w-full"
           [placeholder]="'Payment Ref. No.'"
           [group]="'third'"
-          [type]="'text'"
+          [type]="'number'"
           [name]="'paymnet_ref'"
           [className]="'application-numb'"
         ></app-input-controller>
       </div>
       <!-- Initial Share Value -->
-      <div class="w-[25%] flex flex-col gap-y-1">
+      <div class="w-[16%] flex flex-col gap-y-1">
         <h1 class="pl-1 required">Initial Share Value</h1>
         <app-input-controller
           class="w-full"
           [placeholder]="'Initial Share Value'"
           [group]="'third'"
-          [type]="'text'"
+          [type]="'number'"
           [name]="'initial_value'"
           [className]="'application-numb'"
         ></app-input-controller>
       </div>
-      <!-- Is Active -->
-      <div class="w-[25%] flex gap-x-2 items-center">
-        <h1 class="pl-1">Is Active</h1>
-        <app-checkbox-controller
-          [group]="'third'"
-          [name]="'is_active'"
-        ></app-checkbox-controller>
-      </div>
+    </div>
+    <!-- Is Active -->
+    <div class="w-[16%] flex gap-x-2 items-center">
+      <h1 class="pl-1">Is Active</h1>
+      <app-checkbox-controller
+        [group]="'third'"
+        [name]="'is_active'"
+      ></app-checkbox-controller>
     </div>
   </div>
   <!-- Next Btn -->
