@@ -4,7 +4,8 @@
     pInputText
     [formControlName]="name"
     class="w-full"
-    min="0"
+    [min]="min"
+    [maxlength]="maxlength"
     [ngClass]="className"
     [placeholder]="placeholder"
   />

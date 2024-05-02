@@ -19,7 +19,7 @@ export class CalendarControllerComponent {
   @Input() group!: string;
   @Input() name!: string;
   @Input() format: string = 'dd/mm/yy';
-  @Input() minDate: Date = new Date(Date.now());
+  @Input() minDate!: Date;
   @Input() maxDate!: Date;
   @Input() placeholder!: string;
 

@@ -72,6 +72,7 @@ export class MembersFormComponent implements OnInit {
   MemberTypeArray = member_type;
 
   constructor(private fb: FormBuilder) {}
+
   ngOnInit(): void {
     this.reactiveForm.controls.sec.controls.bank_details.controls.ifsc.disable();
   }
@@ -84,7 +85,7 @@ export class MembersFormComponent implements OnInit {
       relation_name: new FormControl(null),
       gender: new FormControl<dropdown | null>(null, [Validators.required]),
       dob: new FormControl(null, [Validators.required]),
-      age: new FormControl(null, [Validators.required]),
+      age: new FormControl(null, [Validators.required, Validators.min(1)]),
       cast_Cat: new FormControl<dropdown | null>(null, [Validators.required]),
       qualification: new FormControl<dropdown | null>(null, [
         Validators.required,
@@ -97,7 +98,10 @@ export class MembersFormComponent implements OnInit {
         hamlet: new FormControl<dropdown | null>(null),
         house: new FormControl(null),
         post_office: new FormControl(null),
-        pincode: new FormControl(null, Validators.required),
+        pincode: new FormControl(null, [
+          Validators.required,
+          Validators.maxLength(6),
+        ]),
         mobile: new FormControl(null, Validators.required),
         phone: new FormControl(null),
       }),
@@ -146,13 +150,15 @@ export class MembersFormComponent implements OnInit {
       is_active: new FormControl(false),
     }),
   });
+
   change() {
     if (this.reactiveForm.invalid) {
-      this.reactiveForm.markAllAsTouched();
+      this.reactiveForm.controls.first.markAllAsTouched();
       return;
     }
     console.log(this.reactiveForm.value.first);
   }
+
   FPage() {
     if (this.reactiveForm.controls.first.invalid) {
       this.reactiveForm.controls.first.markAllAsTouched();
@@ -164,6 +170,7 @@ export class MembersFormComponent implements OnInit {
       console.log(this.reactiveForm.controls.first.value);
     }
   }
+
   SPage() {
     if (this.reactiveForm.controls.first.invalid) {
       this.reactiveForm.controls.sec.markAllAsTouched();
@@ -175,6 +182,18 @@ export class MembersFormComponent implements OnInit {
       console.log(this.reactiveForm.controls.sec.value);
     }
   }
+
+  NextPage() {
+    if (this.page === '1') {
+      this.FPage();
+      return;
+    }
+    if (this.page === '2') {
+      this.SPage();
+      return;
+    }
+  }
+
   Submit() {
     this.reactiveForm.controls.third.markAllAsTouched();
     console.log(this.reactiveForm.controls.third.value);

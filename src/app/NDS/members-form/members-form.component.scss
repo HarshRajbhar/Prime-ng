@@ -27,6 +27,9 @@
       font-weight: 900;
     }
   }
+  .p-dropdown-panel .p-dropdown-header {
+    padding: 0.7rem;
+  }
 }
 
 :host {
@@ -62,9 +65,4 @@ h1 {
 header {
   font-size: 14px;
   font-weight: bold;
-}
-
-.row-Grid {
-  display: grid;
-  grid-template-columns: repeat(4, 24%);
 }

@@ -23,6 +23,8 @@ export class InputControllerComponent implements OnInit {
   @Input() placeholder!: string;
   @Input() type!: string;
   @Input() className!: any;
+  @Input() maxlength!: number;
+  @Input() min!: number;
   FormControlVal!: FormGroup;
   constructor(private rootFormGroup: FormGroupDirective) {}
   ngOnInit(): void {
